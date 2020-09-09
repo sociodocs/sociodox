@@ -1,6 +1,6 @@
 body{
-  background-image: url("10613180113_fdf7bcd316_b.jpg") cover;
-  
+  background-image: url("images/10613180113_fdf7bcd316_b.jpg") cover;
+
   color:black;
   padding: 0px;
   margin: 0;
@@ -16,7 +16,7 @@ body{
     text-align: right;
     font-size: medium;
     font-display: normal;
-    color:black; 
+    color:black;
     padding-left:50px;
     padding-top:10px;
   }
@@ -24,33 +24,33 @@ body{
     padding:17px ;
     color:black;
     font-size: large;
-    font-family:'Times New Roman', Times, serif; 
-    text-emphasis: emphasis 1px; 
+    font-family:'Times New Roman', Times, serif;
+    text-emphasis: emphasis 1px;
 }
 
 .soci{
   font-size: 25px;
   text-decoration-color: black;
-  font-family:'Times New Roman', Times, serif;  
+  font-family:'Times New Roman', Times, serif;
 }
 
 .right{
     font-size:larger;
     text-decoration-color: black;
-    font-family:'Times New Roman', Times, serif;  
+    font-family:'Times New Roman', Times, serif;
     padding: 5px;
     padding-top:13px;
 }
 
 .nav-link{
   color:black;
-  
+
 }
 
 .middle{
   padding-top: 15px;
   height: 50%;
-  width: 50%;  
+  width: 50%;
 }
 .footer{
   width:100%;
@@ -72,7 +72,7 @@ h4{
   height:50px;
   background: transparent;
   border-radius:30px;
-  text-align: center; 
+  text-align: center;
   padding:2px;
   margin: 15px 15px;
 }

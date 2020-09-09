@@ -1,0 +1,71 @@
+/* This is for blur popup effect utkarsh */
+
+@import url('http://font.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+#blur.active{
+  filter:blur(20px);
+  pointer-events: none;
+  user-select: none;
+
+}
+
+#popup{
+  position: fixed;
+  top: 40%;
+  Left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#popup.active{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+/* This is a regular login css utkarsh */
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 5px;
+  transition: 0.25s;
+}
+
+button {
+  background-color: #00ace6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancel_button {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+span.password {
+  float: right;
+  padding-top: 16px;
+}
