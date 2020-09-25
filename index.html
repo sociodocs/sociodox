@@ -1,177 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Sociodox </title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="style.css" >
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
-  <!-- login popup start utkarsh -->
-    <div class="login_border" id="popup">
-      <h2 style="font-family:'Times New Roman', Times, serif;"> SOCIODOX </h2>
-      <form method="post" id="login">
-
-          <input type="text" id="tb_email_phone" placeholder="Email address or phone number" name="email_phone" required>
-          <input type="password" id="tb_password" placeholder="Password" name="password" required>
-          <button type="submit"> Log In </button>
-
-          <button type="button" class="cancel_button" onclick="toggle()"> Cancel </button>
-          <span class="password"><a href="#"> Forgotten account </a> </span>
-
-      </form>
-    </div>
-  <!-- login popup END utkarsh  -->
-
-  <!-- script for login start utkarsh -->
-    <script type="text/javascript">
-      function toggle(){
-        var blur = document.getElementById('blur');
-        blur.classList.toggle('active');
-
-        var popup = document.getElementById('popup');
-        popup.classList.toggle('active');
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/section-response.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/about.css">
+    <script src="https://kit.fontawesome.com/fc0bcca8a3.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <script>
+      function showHint(str) {
+          if (str.length == 0) {
+              document.getElementById("txtHint").innerHTML = "";
+              return;
+          } else {
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                      document.getElementById("txtHint").innerHTML = this.responseText;
+                  }
+              };
+              xmlhttp.open("POST", "php/u.php?q=" + str, true);
+              xmlhttp.send();
+          }
       }
-    </script>
-  <!-- script for login END utkarsh -->
+      </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="nav" class="hidden"/>
+        <label for="nav" class="nav-btn">
+          <i></i>
+          <i></i>
+          <i></i>
+        </label>
 
-  <div id="blur">
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="#"><img src="logo/logo.png" class="imghead"/></a>
-        <ul class="navbar-nav ">
-            <li class=" nav-item soci">
-                <a class="nav-link" href="#">SOCIODOX</a>
-            </li>
+        <div class="logo">
+          <a href="#"> SOCIODOX </a>
+        </div>
+                    
+        <div class="nav-wrapper">
+          <ul>
+            <li> <a data-page="home" href="#home"> HOME </a> </li>
+            <li> <a data-page="donate" href="#donate"> DONATE </a> </li>
+            <li> <a data-page="contact" href="#contact"> CONTACT </a> </li>
+            <li> <a data-page="about" href="#about"> ABOUT </a> </li>
+            
+            <li> <button class="login-signup" onclick="toggle()"> LOGIN/SIGNUP </button></li>
+            <div class="marker"></div>
           </ul>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active act">
-                    <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+        </div>
+      </nav>
+    </header>
+    <!--main contents-->
+    <main id="blur">
+      <section data-text="home" id="home" class="home">
+        <h2> Home </h2>
+      </section>
+      <section data-text="donate" id="donate" class="donate">
+        <a href="donation.html"><h2>Donate</h2></a>
+      </section>
+      <section data-text="contact" id="contact" class="contact">
+        <div class="contact-container">
+          <div class="contactinfo">
+            <div>
+              <h2> Contact Info </h2>
+              <ul class="info">
+                <li>
+                  <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                  <span>
+                    Fergusson College<br>Pune<br>411001
+                  </span>
                 </li>
-                <li class="nav-item active act">
-                    <a class="nav-link" href="#">DONATE <span class="sr-only">(current)</span></a>
+                <li>
+                  <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                  <span> info@sociodox.org </span>
                 </li>
-                <li class="nav-item active act">
-                    <a class="nav-link" href="#">BLOG<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active act">
-                    <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active act">
-                    <a class="nav-link" href="#">CONTACT<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ">
-                <li class=" nav-item right">
-                    <a class="nav-link" href="#" onclick="toggle()">LOGIN</a>
-                </li>
-                <li class=" nav-item right">
-                    <a class="nav-link" href="#">SIGN UP</a>
+                <li>
+                  <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                  <span> +91-99999-99999 </span>
                 </li>
               </ul>
+            </div>
+            <ul class="sci">
+              <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
+              <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+              <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+              <li><a href="#"> <i class="fab fa-youtube"></i> </a></li>
+            </ul>
+          </div>
+        <form action="php/contact.php" method="POST">
+          <div class="contactForm" id="contact1">
+            <h2> Send a Message </h2>
+            <div class="formBox">
+              <div class="inputBox w50">
+                <input type="text" name="cfname" required>
+                <span> First Name </span>
+              </div>
+              <div class="inputBox w50">
+                <input type="text" name="clname" required>
+                <span> Last Name </span>
+              </div>
+              <div class="inputBox w50">
+                <input type="text" name="cemail" required>
+                <span> Email Address </span>
+              </div>
+              <div class="inputBox w50">
+                <input type="text" name="cmobile_no" required>
+                <span> Mobile Number </span>
+              </div>
+              <div class="inputBox w100">
+                <textarea name="cmsg" required></textarea>
+                <span> Write your message here... </span>
+              </div>
+              <div class="inputBox w100">
+                <input type="submit" value="Send">
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
+      </form>
+      </section>
+      <section data-text="about" id="about" class="about">
+        <div class="about-container">
+          <h2 class="about-heading"><span> About Us </span></h2>
+          <div class="profiles">
+            <div class="profile">
+              <img src="images/devis.jpg" class="profile-img">
 
-    <hr/>
+              <h3 class="user-name"> Devis Lilhare </h3>
+              <h5> Project Head </h5>
+              <p> I'm a Topper. I got 95%+ in my HSC. I'm from Nagpur.</p>
+            </div>
 
-  <!--
-    <div class="row">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="images/10613180113_fdf7bcd316_b.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <div class="profile">
+              <img src="images/aditya.jpg" class="profile-img">
+
+              <h3 class="user-name"> Aditya Karale </h3>
+              <h5> Database Expert </h5>
+              <p> Ex-Modernite Now Fergussionian. I'm currently living in Nasarapur.</p>
             </div>
+
+            <div class="profile">
+              <img src="images/utkarsh.jpg" class="profile-img">
+
+              <h3 class="user-name"> Utkarsh </h3>
+              <h5> Design Helper </h5>
+              <p> Just another Introvert from Earth </p>
             </div>
-            <div class="carousel-item">
-            <img src="images/10613180113_fdf7bcd316_b.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <img src="images/10613180113_fdf7bcd316_b.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-            </div>
+          </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+      </section>
+    </main>
+    <!--footer part-->
+    <footer>
+      <div class="f-section">
+        <!--logo-->
+        <a href="#" class="f-logo"> SOCIODOX </a>
+        <!--list-->
+        <ul>
+          <h1> Contact Us </h1>
+          <li><p> +91-99999-99999 </p></li>
+          <li><p> Fergusson College, Pune</p></li>
+          <li><p> Just a project</p></li>
+        </ul>
+        <!--f-social-->
+        <div class="f-social">
+          <h1> Social </h1>
+          <!--Social icons-->
+          <div class="f-social-icons">
+            <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+            <a href="#"> <i class="fab fa-twitter"></i> </a>
+            <a href="#"> <i class="fab fa-instagram"></i> </a>
+            <a href="#"> <i class="fab fa-youtube"></i> </a>
+          </div>
+        </div>
+        <!--email-->
+        <div class="f-email">
+          <form action="php/newsletter.php" method="POST">
+          <!--heading-->
+          <h1> Newsletter </h1>
+          <input type="email" placeholder="Enter Your Email" name="letteremail"/><br/>
+          <button class="Newsletter" type="submit">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+      <p class="copyright"> copyright sociodox.org</p>
+    </footer>    
+    <!--after blur signin/signup popup-->
+    <div class="container" id="popup">
+      <!--signup part-->
+
+      <div class="form-container sign-up-container">
+        <form action="php/signup.php" method="POST">
+          <h3 class="login_heading"> Create Account </h3>
+      
+          <div class="social-container">
+            <a href="#" class="social"> <i class="fab fa-facebook-f"> </i> </a>
+            <a href="#" class="social"> <i class="fab fa-google-plus-g"> </i> </a>
+          </div>
+          <input type="text" placeholder="Email address or phone number" name="email_phone" required>
+          <input type="text" placeholder="Username" name="username" required onkeyup="showHint(this.value)">
+          <span id="txtHint"></span>
+          <input type="password" placeholder="Password" name="password" required>
+          <button type="submit"> Sign Up </button>
+      
+          <button type="button" class="cancel_button" onclick="toggle()"> Cancel </button>
+        </form>
       </div>
 
-        <ul class="list-unstyled">
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Integer molestie lorem at massa</li>
-            <li>Facilisis in pretium nisl aliquet</li>
-            <li>Nulla volutpat aliquam velit
-            <ul>
-                <li>Phasellus iaculis neque</li>
-                <li>Purus sodales ultricies</li>
-                <li>Vestibulum laoreet porttitor sem</li>
-                <li>Ac tristique libero volutpat at</li>
-            </ul>
-            </li>
-            <li>Faucibus porta lacus fringilla vel</li>
-            <li>Aenean sit amet erat nunc</li>
-            <li>Eget porttitor lorem</li>
-        </ul>
-    </div>
--->
-    <footer class="footer">
-        <div class="footer-top ">
-                <h4>FOLLOW US:</h4>
-                <div class="img-foot ">
-                    <a href="#" class="foot-link"><img src="logo/facebook.jpg" class="foot-img"></a>
-                    <a href="#" class="foot-link"><img src="logo/insta.jpg" class="foot-img"></a>
-                    <a href="#" class="foot-link"><img src="logo/twit.jpg" class="foot-img"></a>
-                    <a href="#" class="foot-link"><img src="logo/utube.jpg" class="foot-img"></a>
-                </div>
-                <h4>OUR NEWSLETTER:</h4>
-                <div class="form">
-                    <form action="#">
-                        <input type="email" class="for" placeholder="Enter your email" required/>
-                        <button type=submit class="btn-primary for">Subscribe</button>
-                    </form>
-                </div>
+      <!--signin part-->
+            
+      <div class="form-container sign-in-container">
+        <form action="php/checklogin.php" method="POST">
+          <h3 class="login_heading"> Sign In </h3>
+      
+          <div class="social-container">
+            <a href="#" class="social"> <i class="fab fa-facebook-f"> </i> </a>
+            <a href="#" class="social"> <i class="fab fa-google-plus-g"> </i> </a>
+          </div>
+          <input type="text" placeholder="Email address or phone number" name="email_phone" required>
+          <input type="password" placeholder="Password" name="password" required>
+          <button type="submit"> Sign In </button>
+      
+          <button type="button" class="cancel_button" onclick="toggle()"> Cancel </button>
+          <a class="login_anchor" href="#"> Forgotten account </a>
+        </form>
+      </div>
+
+      <!--signin/signup overlay-->
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h3 class="login_heading"> Hey sapiens, </h3>
+            <p class="login_paragraph"> Glad you're back... </p>
+            <button class="ghost" id="signIn"> Sign In </button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h3 class="login_heading"> Welcome, Homo-sapiens </h3>
+            <p class="login_paragraph"> So, you are new here. Let's make a new account...</p>
+            <button class="ghost" id="signUp"> Sign Up </button>
+          </div>
         </div>
-        <p class="last">
-            <a href="#" >@Copyright</a>,By the SocioDox under section 2020;
-        </p>
-    </footer>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </div>
-</body>
+      </div>
+    </div>
+    <script src="js/login.js"></script>
+    <script src="js/section-response.js"></script>
+  </body>
 </html>

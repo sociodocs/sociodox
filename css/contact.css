@@ -1,0 +1,179 @@
+section .contact-container{
+   position: relative;
+   min-width: 1100px;
+   min-height: 550px;
+   display: flex;
+   z-index: 1000;
+}
+
+section .contact-container .contactinfo{
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100% -80px);
+    background: #0f3659;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+section .contact-container .contactinfo h2{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+section .contact-container .contactinfo .info{
+    position: relative;
+    margin: 20px 0;
+}
+
+section .contact-container .contactinfo .info li{
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+section .contact-container .contactinfo .info li span:nth-child(1){
+    width: 30px;
+    min-width: 30px;
+}
+
+section .contact-container .contactinfo .info li span:nth-child(1) i{
+    max-width: 100%;
+    filter: invert(1);
+    opacity: 0.5;
+}
+ 
+section .contact-container .contactinfo .info li span:nth-child(2){
+    color: #fff;
+    margin: left;
+    font-weight: 300;
+    opacity: 0.5;
+
+}
+
+section .contact-container .contactinfo .info li:hover span:nth-child(1) i,
+section .contact-container .contactinfo .info li:hover span:nth-child(1){
+    opacity: 1;
+}
+
+section .contact-container .contactinfo .sci{
+    position: relative;
+    display: flex;
+}
+
+section .contact-container .contactinfo .sci li{
+    list-style: none;
+    margin-right: 15px;
+}
+
+section .contact-container .contactinfo .sci li a{
+    text-decoration: none;
+}
+
+section .contact-container .contactinfo .sci li a i{
+    filter: invert(1);
+    opacity: 0.5;
+}
+
+section .contact-container .contactinfo .sci li:hover a i{
+    opacity: 1;
+}
+
+section .contact-container .contactForm{
+    position: absolute;
+    padding: 70px 50px;
+    background: #fff;
+    margin-left: 150px;
+    padding-left: 250px;
+    width: calc(100% - 150px);
+    height: 100%;
+    box-shadow: 0 50px 50px rgba( 0, 0, 0, 0.5);
+}
+
+section .contact-container .contactForm h2{
+    color: #0f3959;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+section .contact-container .contactForm .formBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+section .contact-container .contactForm .formBox .inputBox{
+    position: relative;
+    margin: 0 0 35px 0;
+}
+
+section .contact-container .contactForm .formBox .inputBox.w50{
+    width: 47%;
+}
+
+section .contact-container .contactForm .formBox .inputBox.w100{
+    width: 100%;
+}
+
+section .contact-container .contactForm .formBox .inputBox input,
+section .contact-container .contactForm .formBox .inputBox textarea{
+    width: 100% !important;
+    padding: 5px 0;
+    resize: none;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border-width: 0 0 2px;
+    border-color: #777;
+    outline: none;
+}
+
+section .contact-container .contactForm .formBox .inputBox textarea{
+    min-height: 120px;
+}
+
+section .contact-container .contactForm .formBox .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+section .contact-container .contactForm .formBox .inputBox input:focus ~span,
+section .contact-container .contactForm .formBox .inputBox textarea:focus ~span,
+section .contact-container .contactForm .formBox .inputBox input:valid ~span,
+section .contact-container .contactForm .formBox .inputBox textarea:valid ~span{
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ff568c;
+}
+
+section .contact-container .contactForm .formBox .inputBox input[type=submit]{
+    position: relative;
+    cursor: pointer;
+    background: #0f3959;
+    color: #fff;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+
+section .contact-container .contactForm .formBox .inputBox input[type=submit]:hover{
+    background: #ff568c;
+}

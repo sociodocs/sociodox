@@ -1,0 +1,143 @@
+footer{
+    background: linear-gradient(to right top, #141E30, #243B55);
+    /*background-color: #353745;*/
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+footer ul{
+    list-style: none;
+}
+
+.f-logo{
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    font-size: 25px;
+}
+
+.f-section ul{
+    margin: 0px;
+    padding: 0px 20px;
+}
+
+.f-section h1{
+    color: #9697a0;
+    font-size: 20px;
+
+}
+
+.f-section ul li a{
+    font-size: 16px;
+    color: #575a70;
+}
+
+.f-section ul li p{
+    font-size: 14px;
+    color: #575a70;
+    line-height: 10px;
+}
+
+.f-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3% 3%;
+    margin: 5px;
+    width: 85%;
+    flex-wrap: wrap;
+}
+
+.f-social-icons a{
+    width: 35px;
+    height: 35px;
+    margin: 0px 5px;
+    background-color: #424356;
+    box-shadow: 2px px 12px rgba( 0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-social-icons{
+    display: flex;
+}
+
+.f-email input{
+    height: 35px;
+    width: 200px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+.f-social-icons i{
+    color: #ffff;
+    font-size: 14px;
+}
+
+.copyright{
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.f-social-icons a:hover{
+    background-color: #9a9ff6;
+    transition: all ease 0.5s;
+}
+
+.f-email,.f-social{
+    text-align: center;
+}
+
+.Newsletter{
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    padding: 8px;
+    width: 99px;
+    
+}
+
+.Newsletter:hover{
+    color: #9697a0;
+    transition: 0.5s;
+}
+
+@media(max-width:1024px){
+   .f-email{
+       margin: 20px auto;
+       display: flex;
+       align-items: center;
+       width: 100%;
+       justify-content: center;
+   }
+
+   .f-email h1{
+       margin: 20px;
+   }
+}
+
+@media(max-width:864px){
+    .f-section{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .f-section ul h1{
+        font-size: 25px;
+    }
+
+    .f-section ul li{
+        text-align: center;
+        margin: 10px;
+    }
+
+    .f-email{
+        display: block;
+    }
+}
