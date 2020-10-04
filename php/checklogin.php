@@ -24,14 +24,17 @@
 		{
 			$table_users = $row['email']; 
 			$table_users1 =$row['mobile_no'];
+			$table_username =$row['username'];
 			$table_password = $row['password'];
 		}
 		if(($email_phone == $table_users) && ($password == $table_password)||($email_phone == $table_users1) && ($password == $table_password))
 		{
 				if($password == $table_password)
 				{
-					$_SESSION['email'] = $email_phone; 
-					header("location: #"); 
+					$_SESSION['email'] = $email_phone;
+					$_SESSION['username'] = $table_username;
+					$_SESSION['password'] = $password;  
+					header("location: ../profile.html"); 
 				}
 				
 		}
@@ -45,7 +48,7 @@
 	else
 	{
 		Print '<script>alert("Invalid email or phone number!");</script>'; 
-		Print '<script>window.location.assign("index.html");</script>'; 
+		Print '<script>window.location.assign("../index.html");</script>'; 
 	}
 
 	pg_close($conn);

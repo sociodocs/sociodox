@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS admin;
+DROP TABLE IF EXISTS comment;
 drop table if EXISTS newsletter;
 drop table if EXISTS donation;
 drop table if EXISTS contact;
@@ -30,3 +32,18 @@ create table donation(
 create table newsletter(
     email_id serial primary key,
     email varchar(50) not null);
+
+
+CREATE TABLE comment(
+  sr_no serial NOT NULL PRIMARY key,
+  name varchar(20) NOT NULL,
+  comments text NOT NULL,
+  post_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+create table admin(
+    admin_username varchar(50) primary key,
+    admin_password varchar(50) not null);
+
+insert into admin values('aditya','123');
+
