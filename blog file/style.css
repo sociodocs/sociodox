@@ -1,0 +1,93 @@
+
+/*Admin page*/
+*{
+    padding: 0px;
+ 
+}
+body{
+    color: black;
+    background-color:aqua;
+}
+.admin{
+    border: 1px solid black;
+    justify-content: center;
+    text-align: center;
+    margin-left: 20%;
+    margin-top: 10%;
+    border-radius: 100px;
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+    background-color:goldenrod;
+}
+.frm{
+  
+    justify-content: center;
+    text-align: center;
+    background-color: bisque;
+     border: 1px solid black;
+    border-radius: 100px;
+    padding: 40px;
+}
+
+.lab{
+    font-size: large;
+    padding: 10px;
+    color: black;
+    text-emphasis: 2em;
+    text-align: center;
+    width: 50%;
+    padding: 40px;
+}
+.bar{
+    width: 40%;
+    height: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    size: 30px;
+    padding: 10px;
+    
+}
+.btn{
+    padding: 10px;
+    background-color: beige;
+    color: blue;
+
+}
+
+/*post page*/
+.blog{
+
+    border: 1px solid black;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.title{
+    font-size: 50px;
+    background-color: violet;
+    text-align: center;
+ 
+}
+
+.image{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    background-color:white;  
+}
+
+.content{
+    background-color:navy;
+    color:darkkhaki;
+    justify-content: center;
+    text-align: center;
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+.bottom{
+    background-color: black;
+    color: white;
+}
+
