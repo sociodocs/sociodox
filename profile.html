@@ -2,21 +2,46 @@
 <html>
      <head>
          <title>Profile-Page</title>
-         <link rel="stylesheet" href="css/style.css">
-         <link rel="stylesheet" href="css/navigation.css">
+         <link rel="stylesheet" href="css/profile.css">
      </head>
   <body>
-     <h1 align=center class="login_heading">Welcome To Profile</h1>
-     <header>
-      <nav>
-        <div class=""nav-wrapper">
-            <ul>
-              <li> <a href="php/chat.php">Chatbox</a></li>
-              <li> <a href="#">Profile</a></li>
-              <li> <a href="#">Settings</a></li>
-             </ul>             
+    <div class="profile">
+      <div class="box header1">SOCIODOX
+        <div class="people">For people</div>
+      </div>
+      <div class="box header2">
+        <form action="profile.html" method="POST"> 
+          <div align=center>
+              <input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off"/>
+                <img src="logo/search.png" onclick="Search()">
+              </br>
+              <span id="ts"></span>
+          </div>
+         </form>
+     </div>
+      <div class="box header3">
+            <a href="php/chat.php"><img id="chat" src="logo/chat.png"/></a>
+            <a href="php/chat.php"><img id="post" src="logo/post.png"/></a>
+            <a href="php/chat.php"><img id="people" src="logo/people.png"/></a>           
+      </div>
+      <div class="separator"><hr></div>
+      <div class="box sidebar1">
+        <br>
+        Joined Organization</div>
+      <div class="box sidebar2"><br>
+        My Donation
+          <div class="donation">
+
+          </div>
+          <div class="separator" id="donateline"><br><br><hr></div>
+          <a href="#">Settings</a><br>
+          <a href="php/logout.php">Logout</a> 
         </div>
-    </nav>
-    </header>
+      <div class="box main">
+      
+      </div>
+      <div class="box footer">Sociodox.org</div>
+    </div>  
+    <script src="js/search.js"></script> 
   </body>
 </html>

@@ -45,5 +45,7 @@ create table admin(
     admin_username varchar(50) primary key,
     admin_password varchar(50) not null);
 
-insert into admin values('aditya','123');
+insert into admin VALUES('aditya','123');
+insert into admin VALUES('utkarsh','123');
+insert into admin VALUES('devis','123');
 

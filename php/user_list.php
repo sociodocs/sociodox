@@ -1,22 +1,7 @@
 <!DOCTYPE html>
     <head>
 		<title>User Details</title>
-		<!--<link rel="stylesheet" href="../css/style.css"/> -->
-	<style>
-		.userlist{
-		width:100%;
-		border-collapse: collapse;
-		}
-		.userlist th{
-		color:rgb(231, 227, 227);
-		background: #3f0380;
-		padding: 3px 10px;
-		font-size: 20px;
-		}
-	    .userlist td{
-		padding: 3px 10px;
-		}
-  </style>
+		<link rel="stylesheet" href="css/style.css"/>
 		
 	</head>
  <body>

@@ -14,23 +14,6 @@
     <link rel="stylesheet" href="css/about.css">
     <script src="https://kit.fontawesome.com/fc0bcca8a3.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
-    <script>
-      function showHint(str) {
-          if (str.length == 0) {
-              document.getElementById("txtHint").innerHTML = "";
-              return;
-          } else {
-              var xmlhttp = new XMLHttpRequest();
-              xmlhttp.onreadystatechange = function() {
-                  if (this.readyState == 4 && this.status == 200) {
-                      document.getElementById("txtHint").innerHTML = this.responseText;
-                  }
-              };
-              xmlhttp.open("POST", "php/u.php?q=" + str, true);
-              xmlhttp.send();
-          }
-      }
-      </script>
   </head>
   <body>
     <header>
@@ -254,5 +237,6 @@
     </div>
     <script src="js/login.js"></script>
     <script src="js/section-response.js"></script>
+    <script src="js/textHint.js"></script>
   </body>
 </html>
