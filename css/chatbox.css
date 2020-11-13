@@ -3,16 +3,6 @@
     padding:0px;
     font-family: Helvetica, Arial, sans-serif;
 }
-#logout{
-    width:60px; 
-    height:20px; 
-    position:absolute; 
-    top:6px; 
-    right:20px; 
-    margin-bottom:40px; 
-    text-align:center; 
-    color:#fff;
-}
 #container{
     width:50%; 
     height:auto; 
@@ -72,10 +62,7 @@
 #btn{
     border:none; 
     height:80px; 
-    width:100%; 
-    background:tomato; 
-    color:#fff; 
-    font-size:22px;
+    width:100%;  
 }
 
 .chats{

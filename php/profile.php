@@ -10,19 +10,20 @@
 <html>
      <head>
          <title>Profile-Page</title>
-         <!-- <link rel="stylesheet" href="../main.css"> -->
+         <link rel="stylesheet" href="../main.css">
          <link rel="stylesheet" href="../css/profile.css">
      </head>
   <body>
     <div class="profile">
-      <div class="box header1">SOCIODOX
+      <div class="box header1">
+         <div class="logo">SOCIODOX</div>
         <div class="people">For people</div>
       </div>
       <div class="box header2">
-        <form action="profile.html" method="POST"> 
-          <div align=center>
-              <input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off"/>
-                <img src="logo/search.png" onclick="Search()">
+        <form action="profile.php" method="POST"> 
+          <div align=center class="search">
+              <div id="sbar"><input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off"/></div>
+               <div id="slogo"><img src="../logo/search.png" onclick="Search()"></div>
               </br>
               <span id="ts"></span>
           </div>
@@ -31,22 +32,52 @@
       <div class="box header3">
             <a id="chat" href="#"><img id="chat" src="../logo/chat.png"/></a>
             <a id="blog" href="#"><img id="post" src="../logo/post.png"/></a>
-            <a id="profile" href="#"><img id="people" src="../logo/user.png"/></a>           
+            <a id="profile" href="#"><img id="user" src="../logo/user.png"/></a>           
       </div>
       <div class="separator"><hr></div>
       <div class="box sidebar1">
         <br>
-        Joined Organization
+         <h3>Joined Organization</h3>
+        <br>
+        <div id="j-org">
+                <!doctype html>
+                <html>
+                    <body>
+                        <?php
+                        $username=$_SESSION['username'];
+                        $sql = "SELECT org_name FROM organization where org_id =
+                        (
+                            select org_id from organization where org_id = 
+                            (select users_organization.org_id from users_organization where users_organization.username='$username')
+                        )";
+                        
+                        $result = pg_query($conn,$sql);
+                        $exists = pg_num_rows($result); 
+                        if ($exists > 0){
+                        while($row = pg_fetch_assoc($result)) {
+                        ?>
+                        <table class="jorg">              
+                            <tr>
+                                <td><img id="people" src="../logo/people.png"/><?php echo $row["org_name"];?><img id="ar" src="../logo/right-arrow.png"/></td>
+                            </tr>
+                        </table>
+                        <?php
+                        }
+                    }
+                    ?>
+                  </body>
+                </html>
+        </div>
         <br>
         <button id="show-all">Show all</button>
       </div>
       <div class="box sidebar2"><br>
-        <a href="php/mydonation.php" >My Donation</a>
-          <span id="dn">
-          </span>
+        My Donation
+         <div id="dn">
+          </div>
           <div class="separator" id="donateline"><br><br><hr></div>
           <a href="#">Settings</a><br>
-          <a href="php/logout.php">Logout</a> 
+          <a href="logout.php">Logout</a> 
         </div>
       <div class="box main">
         <div id="chat-section">
@@ -55,7 +86,7 @@
 
               <head>
 
-                  <link rel="stylesheet" href="css/chatbox.css"/>
+                  <link rel="stylesheet" href="../css/chatbox.css"/>
 
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                   <script>
@@ -106,12 +137,7 @@
               </head>
 
               <body>
-                  <div id="logout">
-                      <a href="logout.php" >Logout</a>
-                  </div>
-
                   <div id="container">
-
                       <div id="session-name">
                           Your Name: <input type="text" value="<?= $_SESSION['username'] ?>" class="session-text" disabled>
                       </div>
@@ -131,7 +157,8 @@
                                   <textarea id="comment"></textarea>
                               </div>
                               <div class="form-btn">
-                                  <input type="submit" value="Send" id="btn" name="btn" />
+                                  <!-- <input type="submit" value="Send" id="btn" name="btn" /> -->
+                                  <button type="submit" ><img id="send" src="../logo/right-arrow.png"/></button>                           
                               </div>
                           </div>
                       </form>
@@ -147,9 +174,9 @@
           This is Profile
         </div>
       </div>
-      <div class="box footer">Sociodox.org</div>
+      <div class="box footer">@sociodox.org</div>
     </div>  
-    <script src="js/search.js"></script> 
-    <script src="main.js"></script> 
+    <script src="../js/search.js"></script> 
+    <script src="../main.js"></script> 
   </body>
 </html>
