@@ -34,7 +34,7 @@
 					$_SESSION['email'] = $email_phone;
 					$_SESSION['username'] = $table_username;
 					$_SESSION['password'] = $password;  
-					header("location: ../profile.html"); 
+					header("location:profile.php"); 
 				}
 				
 		}
