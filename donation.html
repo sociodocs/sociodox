@@ -1,8 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-          <link href='css/donation.css' rel='stylesheet' type='text/css'> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+		  <!-- <link href='css/donation.css' rel='stylesheet' type='text/css'>  -->
+		  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<div class="donation-container">
+	<section class="donate" id="donate">
+        <div id="donation-title">Donation</div>
+        <div>
+            <h1>Give With Confidence</h1>
+            <form class="donation-form" method="POST" action="#">
+                <div class="select-don-type">
+                    <input type="radio" name="don-type" id="once" checked>
+                    <label for="once">Give Once</label>
+                    <input type="radio" name="don-type" id="monthly">
+                    <label for="monthly">Give Monthly</label>
+                </div>
+                <div class="select-org">
+                    <label>Select Organization</label>
+                    <select>
+                        <option value="sociodox">Sociodox</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="donator-info">
+                    <div id="first-row">
+                        <div class="first-name">
+                            <label for="first-name">First Name</label>
+                            <input type="text" name="first-name" id="don-input">
+                        </div>
+                        <div class="last-name">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" name="last-name" id="don-input">
+                        </div>
+                    </div>
+                    <div id="second-row">
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="don-input">
+                        </div>
+                        <div class="mobile">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" name="mobile" id="don-input">
+                        </div>
+                    </div>
+                    <div id="third-row">
+                        <div class="pan">
+                            <label for="pan">PAN</label>
+                            <input type="text" name="pan" id="don-input">
+                        </div>
+                        <div class="country">
+                            <label for="country">Country</label>
+                            <select>
+                                <option value="india">India</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="fourth-row">
+                        <div class="add-note">
+                            <label for="add-note">Additional Note</label>
+                            <input type="text" name="add-note" id="don-input">
+                        </div>
+                        <div class="amount">
+                            <label for="amount">Amount</label>
+                            <input type="text" name="amount" id="don-input">
+                        </div>
+                    </div>
+                </div>
+                <div id="impact-button">
+                    <button>Create an Impact</button>
+                </div>
+            </form>
+        </div>
+    </section>
+<!-- <div class="donation-container">
 	<form action="php/donationform.php" method="POST">
             <div class="donation-box">
 	            <div class="title">Donation Information</div>
@@ -48,6 +122,7 @@
             </div>
             
         </div>
-	</form>
+	</form> -->
 <script src="js/donation.js"></script>
 </body>
+</html>
