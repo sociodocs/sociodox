@@ -177,7 +177,7 @@
           Edit Profile
         </div>
         <div id="cpass-section">
-          Change password
+          Change password:
         </div>
       </div>
       <div class="box footer">copyright sociodox.org</div>
