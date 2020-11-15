@@ -1,6 +1,6 @@
 <?php
 include("database.php");
-//session_start();
+session_start();
 $sql = "select * from comment";
 $comm = pg_query($conn, $sql);
 while ($row = pg_fetch_array($comm)) {

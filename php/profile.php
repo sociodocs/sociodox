@@ -24,7 +24,7 @@
           <div align=center class="search">
                <div id="sbar"><input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off"/></div>
                <div id="slogo"><img src="../logo/search.png" onclick="Search()"></div></br>
-              <span id="ts"></span>
+              <div id="ts"></div>
           </div>
         </form>
       </div>
@@ -73,10 +73,10 @@
         <button id="show-all">Show all</button>
       </div>
       <div class="box sidebar2"><br>
-        <a href="#">Settings</a><br>
+        <a id="settings" href="#">Settings</a><br>
           <div id="inside">
-            <a href="#">Edit Profile</a><br>
-            <a href="#">Change Password</a><br>
+            <a id="edit" href="#">Edit Profile</a><br>
+            <a id="cpass" href="#">Change Password</a><br>
           </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
            
             <a style="color:red;" href="logout.php">Logout</a> 
@@ -169,6 +169,15 @@
         </div>
         <div id="show-all-section">
           All Organization
+        </div>
+        <div id="settings-section">
+          Settings
+        </div>
+        <div id="edit-section">
+          Edit Profile
+        </div>
+        <div id="cpass-section">
+          Change password
         </div>
       </div>
       <div class="box footer">copyright sociodox.org</div>
