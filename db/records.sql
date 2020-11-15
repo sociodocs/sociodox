@@ -27,6 +27,7 @@ select * from newsletter;
 insert into organization values('1001','save_tree','Government','Environment','5000');
 insert into organization values('1002','blood_donate','non-government','Health','6000');
 insert into organization values('2003','blood_donate','non-government','Health','6000');
+insert into organization values('2004','Save_Girl','non-government','Health','6000');
 
 select * from organization;
 

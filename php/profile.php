@@ -54,11 +54,11 @@
                         if ($exists > 0){
                         while($row = pg_fetch_assoc($result)) {
                     ?>
-                        <table class="jorg">              
+                        <table>              
                             <tr> 
-                                <td>
+                                <td class="jorg">
                                   <img id="people" src="../logo/people.png"/>
-                                    <?php echo $row["org_name"];?>
+                                  <div class="org"> <?php echo $row["org_name"];?></div>
                                   <img id="ar" src="../logo/right-arrow.png"/>
                                 </td><br>
                             </tr>
