@@ -10,7 +10,7 @@ function Search() {
                 document.getElementById("ts").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("POST", "php/search.php?s=" + str, true);
+        xmlhttp.open("POST", "search.php?s=" + str, true);
         xmlhttp.send();
     }
 }

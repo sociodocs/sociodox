@@ -1,171 +1,165 @@
- <?php
- include('database.php');
- session_start();
- if (isset($_SESSION['email'])) {
- } else {
- header('location:../index.html');
- }
- ?>
+<?php
+    include('database.php');
+    session_start();
+    if(isset($_SESSION['email'])) {
+    } else {
+      header('location:../index.html');
+    }
+?>
 <!DOCTYPE html>
 <html>
-     <head>
-         <title>Profile-Page</title>
-         <link rel="stylesheet" href="../main.css">
-         <link rel="stylesheet" href="../css/profile.css">
-     </head>
+    <head>
+        <title>Profile-Page</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="stylesheet" href="../css/profile.css">
+    </head>
   <body>
     <div class="profile">
       <div class="box header1">
-         <div class="logo">SOCIODOX</div>
+        <div class="logo">SOCIODOX</div>
         <div class="people">For people</div>
       </div>
       <div class="box header2">
-        <form action="profile.php" method="POST"> 
+        <form action="#" method="POST"> 
           <div align=center class="search">
-              <div id="sbar"><input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off"/></div>
-               <div id="slogo"><img src="../logo/search.png" onclick="Search()"></div>
-              </br>
+               <div id="sbar"><input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off"/></div>
+               <div id="slogo"><img src="../logo/search.png" onclick="Search()"></div></br>
               <span id="ts"></span>
           </div>
-         </form>
-     </div>
+        </form>
+      </div>
       <div class="box header3">
             <a id="chat" href="#"><img id="chat" src="../logo/chat.png"/></a>
             <a id="blog" href="#"><img id="post" src="../logo/post.png"/></a>
             <a id="profile" href="#"><img id="user" src="../logo/user.png"/></a>           
       </div>
       <div class="separator"><hr></div>
-      <div class="box sidebar1">
-        <br>
-         <h3>Joined Organization</h3>
-        <br>
+      <div class="box sidebar1"><br>
+          <h4>Joined Organization</h4><br>
         <div id="j-org">
                 <!doctype html>
                 <html>
-                    <body>
-                        <?php
+                  <body>
+                    <?php
                         $username=$_SESSION['username'];
-                        $sql = "SELECT org_name FROM organization where org_id =
+                          $sql = "SELECT org_name FROM organization";
+                        /*$sql = "SELECT org_name FROM organization where org_id =
                         (
                             select org_id from organization where org_id = 
                             (select users_organization.org_id from users_organization where users_organization.username='$username')
                         )";
-                        
+                        */
                         $result = pg_query($conn,$sql);
                         $exists = pg_num_rows($result); 
                         if ($exists > 0){
                         while($row = pg_fetch_assoc($result)) {
-                        ?>
+                    ?>
                         <table class="jorg">              
-                            <tr>
-                                <td><img id="people" src="../logo/people.png"/><?php echo $row["org_name"];?><img id="ar" src="../logo/right-arrow.png"/></td>
+                            <tr> 
+                                <td>
+                                  <img id="people" src="../logo/people.png"/>
+                                    <?php echo $row["org_name"];?>
+                                  <img id="ar" src="../logo/right-arrow.png"/>
+                                </td><br>
                             </tr>
                         </table>
-                        <?php
+                    <?php
+                          }
                         }
-                    }
                     ?>
                   </body>
                 </html>
-        </div>
-        <br>
+        </div><br>
         <button id="show-all">Show all</button>
       </div>
       <div class="box sidebar2"><br>
-        My Donation
-         <div id="dn">
-          </div>
-          <div class="separator" id="donateline"><br><br><hr></div>
-          <a href="#">Settings</a><br>
-          <a href="logout.php">Logout</a> 
+        <a href="#">Settings</a><br>
+          <div id="inside">
+            <a href="#">Edit Profile</a><br>
+            <a href="#">Change Password</a><br>
+          </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+           
+            <a style="color:red;" href="logout.php">Logout</a> 
         </div>
       <div class="box main">
         <div id="chat-section">
               <!doctype html>
               <html>
-
               <head>
-
-                  <link rel="stylesheet" href="../css/chatbox.css"/>
-
+                <link rel="stylesheet" href="../css/chatbox.css"/>
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                   <script>
                       $(document).ready(function() {
-                          $(document).bind('keypress', function(e) {
-                              if (e.keyCode == 13) {
-                                  $('#my_form').submit();
-                                  $('#comment').val("");
-                              }
+                        $(document).bind('keypress', function(e) {
+                          if (e.keyCode == 13) {
+                            $('#my_form').submit();
+                            $('#comment').val("");
+                            }
                           });
                       });
                   </script>
-
-              <script type="text/javascript">
-              function post()
-              {
-                var comment = document.getElementById("comment").value;
-                var name = document.getElementById("username").value;
-                if(comment && name)
-                {
-                  $.ajax
-                  ({
-                    type: 'post',
-                    url: 'comments.php',
-                    data: 
-                    {
-                      user_comm:comment,
-                    user_name:name
-                    },
-                    success: function (response) 
-                    {
-                    document.getElementById("comment").value="";
+                <script type="text/javascript">
+                  function post()
+                  {
+                      var comment = document.getElementById("comment").value;
+                      var name = document.getElementById("username").value;
+                      if(comment && name)
+                      {
+                        $.ajax
+                      (
+                        {
+                          type: 'post',
+                          url: 'comments.php',
+                          data: 
+                          {
+                            user_comm:comment,
+                            user_name:name
+                          },
+                          success: function (response) 
+                          {
+                          document.getElementById("comment").value="";
+                          }
+                        }
+                      );
                     }
-                  });
-                }
-
-                  return false;
-              }
-              </script>
-              <script>
-              function autoRefresh_div()
-              {
-                    $("#result").load("load.php").show();// a function which will load data from other file after x seconds
-                }
-              
-                setInterval('autoRefresh_div()', 2000);
-              </script>
+                    return false;
+                  }
+                </script>
+                <script>
+                  function autoRefresh_div()
+                    {
+                      $("#result").load("load.php").show();// a function which will load data from other file after x seconds
+                    }              
+                    setInterval('autoRefresh_div()', 2000);
+                </script>
               </head>
-
-              <body>
-                  <div id="container">
-                      <div id="session-name">
-                          Your Name: <input type="text" value="<?= $_SESSION['username'] ?>" class="session-text" disabled>
-                      </div>
-
-                      <div id="result-wrapper">
-                          <div id="result">
-                              <?php
-                              include("load.php");
-                              ?>
-                          </div>
-                      </div>
-
-                      <form method='post' action="#" onsubmit="return post();" id="my_form" name="my_form">
-                          <div id="form-container">
-                              <div class="form-text">
-                                  <input type="text" style="display:none" id="username" value="<?= $_SESSION['username'] ?>">
-                                  <textarea id="comment"></textarea>
-                              </div>
-                              <div class="form-btn">
-                                  <!-- <input type="submit" value="Send" id="btn" name="btn" /> -->
-                                  <button type="submit" ><img id="send" src="../logo/right-arrow.png"/></button>                           
-                              </div>
-                          </div>
-                      </form>
-
+            <body>
+              <div id="container">
+                <div id="session-name">
+                  Your Name: <input type="text" value="<?= $_SESSION['username'] ?>" class="session-text" disabled>
+                </div>
+                <div id="result-wrapper">
+                  <div id="result">
+                    <?php
+                      include("load.php");
+                    ?>
                   </div>
-              </body>
-              </html>
+                </div>
+                <form method='post' action="#" onsubmit="return post();" id="my_form" name="my_form">
+                  <div id="form-container">
+                    <div class="form-text">
+                      <input type="text" style="display:none" id="username" value="<?= $_SESSION['username'] ?>">
+                      <textarea id="comment"></textarea>
+                        </div>
+                          <div class="form-btn">
+                            <!-- <input type="submit" value="Send" id="btn" name="btn" /> -->
+                            <button type="submit" ><img id="send" src="../logo/right-arrow.png"/></button>                           
+                          </div>
+                        </div>
+                </form>
+              </div>
+            </body>
+          </html>
         </div>
         <div id="blog-section">
           This is blog
@@ -173,8 +167,11 @@
         <div id="profile-section">
           This is Profile
         </div>
+        <div id="show-all-section">
+          All Organization
+        </div>
       </div>
-      <div class="box footer">@sociodox.org</div>
+      <div class="box footer">copyright sociodox.org</div>
     </div>  
     <script src="../js/search.js"></script> 
     <script src="../main.js"></script> 

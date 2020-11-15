@@ -1,188 +1,143 @@
-body {
-  margin: 1px;
+body{
+  margin: 2px;
   font-family: 'Poppins';
 }
- 
-.sidebar1{
-grid-area: sidebar1;
-}
-
-.sidebar2 {
-grid-area: sidebar2;
-}
-
-.main {
-grid-area: main;
-}
-
-.header1 {
-grid-area: header1;
-}
-
-.header2 {
-  grid-area: header2;
-  }
-  
-.header3 {
-  grid-area: header3;
-  }
 
 .separator{
-    grid-area: separator;
+  grid-area: separator;
 }
 
-.footer {
-grid-area: footer;
+.sidebar1{
+grid-area: sidebar1;
+background-color: #E5E5E5;
+margin-left: 10px;
+text-align: center;
+font-size: 20px; 
 }
 
-.profile {
-background-color: #FFFFFF;
-color: #444444;
+.sidebar2{
+grid-area: sidebar2;
+background-color: #E5E5E5;
+margin-right: 10px;
+text-align: center;
+font-size: 25px;
 }
 
-  .profile {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-areas:
-     "header1"
-     "header2"
-     "header3"
-     "separator"
-     "sidebar1"
-     "main"
-     "sidebar2"
-     "footer"
-  }
-
-.profile {
-grid-template-columns: 20% auto 20%;
-grid-template-areas:
-  "header1   header2  header3"
-  "separator separator separator"
-  "sidebar1  main  sidebar2"
-  "footer   footer  footer";
-max-width: 100%;
-height: 100vh;
+.main{
+  grid-area: main;
+  background-color: #FFFFFF;
 }
 
-.profile {
-grid-gap: 5px;
-grid-template-rows: 10% 2% auto 10%;
-grid-template-areas:
-      "header1  header2  header3"
-      "separator separator separator"
-      "sidebar1 main sidebar2"
-      "footer  footer  footer";
+.footer{
+  grid-area: footer;
+  background-color: #243B55;
+  color: #FFFFFF;
+  margin-top: 5px;
+  font-size: 20px;
+  text-align: center;
 }
-
-.box {
-  background-color: #E5E5E5;
-  color: black;
-  border-radius: 4px;
-  padding: 1px;
-  font-size: 30px; 
+  
+.header1{
+  grid-area: header1;
+  background-color: #FFFFFF;
+  position: absolute; 
 }
 
 .header2{
+  grid-area: header2;
   background-color: #E5E5E5;
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 10px;
   margin-bottom: 5px;
 }
-.header1{
+  
+.header3{
+  grid-area: header3;
   background-color: #FFFFFF;
-  position: absolute;
-  /* font-size: 30px;
-  font-family: Poppins;
-  font-weight: 400px;*/
   margin-top: 20px;
-  margin-left: 30px; 
-}
-.header3 {
-background-color: #FFFFFF;
-margin-top: 20px;
-margin-left: 30px;
+  margin-left: 30px;
 }
 
-.main{
-  background-color: #FFFFFF;
-
+.profile{
+  width: 100%;
+  height: 100vh;
+  background: #FFFFFF;
+  font-family: 'Poppins';
+  display: grid;
+  grid-gap: 0.3em;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: 10% 2% auto 10%;
+  grid-template-areas:
+    "header1   header2  header3"
+    "separator separator separator"
+    "sidebar1  main  sidebar2"
+    "footer   footer  footer";  
 }
-
-.footer {
-  background-color: #243B55;
-  color: #FFFFFF;
-  margin-top: 10px;
-  font-size: 20px;
-  text-align: center;
-
-}
-
-.sidebar1{
-    margin-left: 10px;
-    text-align: center;
-    font-size: 20px;
-}
-.sidebar2 {
-    margin-right: 10px;
-    text-align: center;
-    font-size: 25px;
+ 
+.box{
+  border-radius: 4px;
+  padding: 1px;
+  font-size: 20px; 
 } 
 
-hr {
+hr{
   border: 1px solid black;
 }
 .logo{
   position: relative;
-  font-family: 'Poppins';
-  font-size: 25px;
-  font-weight: 600;
-  margin-top: -10px;
-  margin-bottom: -30px;
+  height: 33px;
+  margin-left: 20px;
+  margin-top: 10px;  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 35px;
+  color: #000000;  
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .people{
-    position: relative;
-    font-size: 15px;
-    margin-left: 160px;
-    margin-bottom: -30px;
-    margin-top: 10px;
-}
+  position: relative;
+  font-size: 15px;
+  margin-left: 200px;
+  margin-bottom: -30px;
+  }
 #search{
-    width: 80%;
-    height: 30px;
-    text-align: center;
-    margin-left: 40px;
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  border: none;
 }
 
 #searchbtn{
   height: 20%;
   width: 4%;
 }
-#chat-section,#blog-section,#profile-section{
+#chat-section,#blog-section,#profile-section,#show-all-section{
   display: none;
 }
 
 
 .jorg{
-  width:100%;
-  border-collapse: collapse;
+  width:90%;
   background: #FFFFFF;
-  }
-.userlist td{
-    color:black;
-    padding: 3px 10px;
-    font-size: 10px;
-    font-weight: 300;
-    text-align: center;
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-
+  margin-left: 10px;
+  font-size: 15px; 
+}
+.jorg td{
+  color:black;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 300;
+  text-align: center; 
+}
 img{
-    width: 25px;
-    height: auto;
-  }
+  width: 25px;
+  height: auto;
+}
 #sbar{
   margin-left: -80px;
 }
@@ -192,25 +147,22 @@ img{
 }
 
 #chat{
-    margin-left: 10px;
-  }
+  margin-left: 10px;
+}
 
 #post,#user{
-    margin-left: 40px;
-  }
-#people{
-   margin-left: -30px;
-   margin-right: 30px;
-   width: 20px;
-
+  margin-left: 40px;
 }
+#people{
+  margin-left: -10px;
+  margin-right: 10px;
+  width: 20px;
+ }
 #ar{
-  margin-left: 30px;
+  margin-left: 90px;
   width: 15px;
 }
-#donateline{
-  width: 80%;
-  margin-left: 25px;
-  margin-right: 10px;
+#show-all{
+ border: none;
+ color: red;
 }
-
