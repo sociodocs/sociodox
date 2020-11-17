@@ -12,6 +12,7 @@
         <title>Profile-Page</title>
         <link rel="stylesheet" href="../main.css">
         <link rel="stylesheet" href="../css/profile.css">
+        <link rel="stylesheet" href="../css/cpass.css">
     </head>
   <body>
     <div class="profile">
@@ -177,7 +178,25 @@
           Edit Profile
         </div>
         <div id="cpass-section">
-          Change password:
+          <center><h2>Change Password</h2></center><hr>
+          <form method="post" action="cpass.php">
+            <label>Current Password</label>
+              <div class="#"> 
+                <input type="password"  class="form-control" placeholder="Current Password" name="oldpsw"> 
+              </div> 
+              <label>New Password</label>
+              <div class="#"> 
+                <input class="#" type="password" required=" " id="pass1" name="newpsw" placeholder="Password">
+              </div> 
+              <label>Confirm Password</label>
+              <div class="#"> 
+                <input class="#" type="password" required=" " id="pass2" onkeyup="checkPass(); return false;" placeholder="Confirm Password" name="conpsw">
+                <span id="confirmMessage"></span>
+              </div> 
+              <div class="#"> 
+              <input type="submit"  class="#" value="Change Password" name="changepsw" id="cp"> 
+              </div> 
+          </form>
         </div>
       </div>
       <div class="box footer">copyright sociodox.org</div>

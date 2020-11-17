@@ -9,18 +9,13 @@ insert into users VALUES('utkarsh','ub@gmail.com','7721845802','123');
 
 select * from users;
 
-insert into contact VALUES('aditya','karale','akarale61@gmail.com','7721879802','hello');
-insert into contact VALUES('utkarsh','belkhede','ub@gmail.com','7721845802','hi');
+insert into contact VALUES('1','aditya','karale','akarale61@gmail.com','7721879802','hello');
+insert into contact VALUES('2','utkarsh','belkhede','ub@gmail.com','7721845802','hi');
 
 select * from contact;
 
-insert into donation values('aditya','karale','akarale61@gmail.com','7721879802','one-time','1000','send me reciept');
-insert into donation values('utkarsh','belkhede','ub@gmail.com','7721845802','one-time','1000','send me reciept');
-
-select * from contact;
-
-insert into newsletter values('akarale61@gmail.com');
-insert into newsletter values('ub@gmail.com');
+insert into newsletter values('1','akarale61@gmail.com');
+insert into newsletter values('2','ub@gmail.com');
 
 select * from newsletter;
 
@@ -30,6 +25,11 @@ insert into organization values('2003','blood_donate','non-government','Health',
 insert into organization values('2004','Save_Girl','non-government','Health','6000');
 
 select * from organization;
+
+insert into donation values('1','aditya','karale','akarale61@gmail.com','7721879802','IJKIO8989G','india','one-time','1000','send me reciept','1001');
+insert into donation values('2','utkarsh','belkhede','ub@gmail.com','7721845802','RTGY7878K','india','one-time','1000','send me reciept','1002');
+
+select * from donation;
 
 insert into comment values('2001','Aditya','Hi','1001');
 insert into comment values('2002','Utkarsh','Hello','1002');

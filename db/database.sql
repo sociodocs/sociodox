@@ -2,9 +2,9 @@ DROP TABLE IF EXISTS users_organization;
 DROP TABLE IF EXISTS profile;
 DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS comment;
+drop table if EXISTS donation;
 DROP TABLE IF EXISTS organization;
 drop table if EXISTS newsletter;
-drop table if EXISTS donation;
 drop table if EXISTS contact;
 drop table if EXISTS users;
 
@@ -22,15 +22,6 @@ create table contact(
     mobile_no bigint not null,
     msg text);
 
-create table donation(
-    donation_id serial primary key,
-    first_name varchar(50) not null,
-    last_name varchar(50) not null,
-    email varchar(100),
-    mobile_no bigint,
-    amount_status varchar(50),
-    amount int not null,
-    comment text);
 
 create table newsletter(
     email_id serial primary key,
@@ -46,6 +37,19 @@ create table organization(
     org_total_don int NOT NULL
 );
 
+create table donation(
+    donation_id serial primary key,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    email varchar(100),
+    mobile_no bigint(50),
+    pan varchar(10),
+    country varchar(20),
+    amount_status varchar(50),
+    amount int not null,
+    comment text,
+    org_id serial REFERENCES organization(org_id) on delete cascade on update set null
+);
 
 CREATE TABLE comment(
   sr_no serial NOT NULL PRIMARY key,
@@ -73,6 +77,6 @@ create table profile(
 
 create table users_organization(
     username varchar(50) REFERENCES users(username) on delete cascade on update set null,
-    org_id int REFERENCES organization(org_id) on delete cascade on update set null
+    org_id serial REFERENCES organization(org_id) on delete cascade on update set null
 );
 
