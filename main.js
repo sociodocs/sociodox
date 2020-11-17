@@ -98,3 +98,4 @@ function checkPass()
         $('#cp').prop('disabled', true);
     }
 }  
+

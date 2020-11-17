@@ -182,15 +182,15 @@
           <form method="post" action="cpass.php">
             <label>Current Password</label>
               <div class="#"> 
-                <input type="password"  class="form-control" placeholder="Current Password" name="oldpsw"> 
-              </div> 
+                <input type="password"  class="form-control"  onmouseover="this.type='text'" onmouseout="this.type='password'" placeholder="Current Password" name="oldpsw">
+                </div> 
               <label>New Password</label>
               <div class="#"> 
-                <input class="#" type="password" required=" " id="pass1" name="newpsw" placeholder="Password">
+                <input class="#" type="password" required=" " id="pass1" name="newpsw" placeholder="Password" onmouseover="this.type='text'" onmouseout="this.type='password'">                
               </div> 
               <label>Confirm Password</label>
               <div class="#"> 
-                <input class="#" type="password" required=" " id="pass2" onkeyup="checkPass(); return false;" placeholder="Confirm Password" name="conpsw">
+                <input class="#" type="password" required=" " id="pass2" onkeyup="checkPass(); return false;"  onmouseover="this.type='text'" onmouseout="this.type='password'" placeholder="Confirm Password" name="conpsw">
                 <span id="confirmMessage"></span>
               </div> 
               <div class="#"> 
