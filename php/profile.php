@@ -151,12 +151,11 @@
                     <div class="form-text">
                       <input type="text" style="display:none" id="username" value="<?= $_SESSION['username'] ?>">
                       <textarea id="comment"></textarea>
+                      </div>
+                        <div class="form-btn">
+                          <button type="submit" ><img id="send" src="../logo/right-arrow.png"/></button>                           
                         </div>
-                          <div class="form-btn">
-                            <!-- <input type="submit" value="Send" id="btn" name="btn" /> -->
-                            <button type="submit" ><img id="send" src="../logo/right-arrow.png"/></button>                           
-                          </div>
-                        </div>
+                      </div>
                 </form>
               </div>
             </body>
@@ -180,22 +179,24 @@
         <div id="cpass-section">
           <center><h2>Change Password</h2></center><hr>
           <form method="post" action="cpass.php">
-            <label>Current Password</label>
-              <div class="#"> 
-                <input type="password"  class="form-control"  onmouseover="this.type='text'" onmouseout="this.type='password'" placeholder="Current Password" name="oldpsw">
+            <div class="cpwd">
+                <label>Current Password</label>
+                <div class="cp"> 
+                  <input type="password" id="oldp" class="form-control"  onmouseover="this.type='text'" onmouseout="this.type='password'"  name="oldpsw">
+                  </div> 
+                <label>New Password</label>
+                <div class="np"> 
+                  <input class="#" type="password" required=" " id="pass1" name="newpsw"  onmouseover="this.type='text'" onmouseout="this.type='password'">                
                 </div> 
-              <label>New Password</label>
-              <div class="#"> 
-                <input class="#" type="password" required=" " id="pass1" name="newpsw" placeholder="Password" onmouseover="this.type='text'" onmouseout="this.type='password'">                
-              </div> 
-              <label>Confirm Password</label>
-              <div class="#"> 
-                <input class="#" type="password" required=" " id="pass2" onkeyup="checkPass(); return false;"  onmouseover="this.type='text'" onmouseout="this.type='password'" placeholder="Confirm Password" name="conpsw">
-                <span id="confirmMessage"></span>
-              </div> 
-              <div class="#"> 
-              <input type="submit"  class="#" value="Change Password" name="changepsw" id="cp"> 
-              </div> 
+                <label>Confirm Password</label>
+                <div class="dp"> 
+                  <input class="#" type="password" required=" " id="pass2" onkeyup="checkPass(); return false;"  onmouseover="this.type='text'" onmouseout="this.type='password'" name="conpsw">
+                  <span id="confirmMessage"></span>
+                </div> 
+                <div class="ok"> 
+                <input type="submit"  class="cok" value="Change Password" name="changepsw" id="cp"> 
+                </div>
+            </div> 
           </form>
         </div>
       </div>

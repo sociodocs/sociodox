@@ -39,7 +39,7 @@
                                 }else{
                                 ?>
                                 <script>alert("Password Not Changed");
-                                window.location.href = "change-psw.php";
+                                window.location.href =  "profile.php#";
                                 </script>
                                 <?php
                                 }
@@ -47,14 +47,14 @@
                             }else{
                                 ?>
                                 <script>alert("Password Not Matched");
-                                window.location.href = "change-psw.php";
+                                window.location.href =  "profile.php#";
                                 </script>
                                 <?php
                             }
                     }else{
                         ?>
                         <script>alert("Old password is wrong");
-                        window.location.href = "change-psw.php";
+                        window.location.href = "profile.php#";
                         </script>
                         <?php
                     }
