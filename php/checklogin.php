@@ -50,6 +50,18 @@
 		Print '<script>alert("Invalid email or phone number!");</script>'; 
 		Print '<script>window.location.assign("../index.html");</script>'; 
 	}
+	$username = $_SESSION['username']; 
+	$sql2 = pg_query($conn,"select * from profile where username='$username'") or die("could");
+	if($sql2){
+		while($row = pg_fetch_assoc($sql2))
+		{
+			$_SESSION['first_name'] = $row['first_name']; 
+			$_SESSION['last_name'] = $row['last_name']; 
+			$_SESSION['email'] = $row['email']; 
+			$_SESSION['mobile_no'] = $row['mobile_no']; 
+			$_SESSION['dp'] = $row['dp']; 
+		}
+	}
 
 	pg_close($conn);
 }

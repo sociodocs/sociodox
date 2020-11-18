@@ -167,9 +167,9 @@
         <div id="profile-section">           
           <div class="dprofile-card">
               <div class="dprofile">
-                <img src="../images/aditya.jpg" class="dprofile-dp">
+                <img src="<?php echo $_SESSION['dp'];?>" class="dprofile-dp">
                 <h3 class="user-name"> <?php echo $_SESSION['username'];?> </h3>
-                <h5> Aditya Karale </h5>
+                <h5> <?php echo $_SESSION['first_name'];echo " "; echo $_SESSION['last_name'];?> </h5>
               </div>
           </div>
               <div class="p-details">
@@ -204,26 +204,41 @@
         <div id="settings-section">
           Settings
         </div>
-        <div id="edit-section">
-          Edit Profile:
+        <div id="edit-section">          
+          <div class="dprofile-card">
+              <div class="dprofile">
+                <img src="<?php echo $_SESSION['dp'];?>" class="dprofile-dp">
+              </div>
+          </div>         
           <div class="edit-p">
             <form method="POST" action="editprofile.php" enctype="multipart/form-data">
-              <lable>Profile Image:</lable>
-              <input type="file" name="p" id="p"><br>
-              <lable>First Name</lable>
-              <input type="text"  name="first_name" placeholder=""/><br>
-              <lable>Last Name</lable>
-              <input type="text" name="last_name" placeholder=""/><br>
-              <lable>Email</lable>
-              <input type="text" name="email" placeholder=""/><br>
-              <lable>Mobile</lable>
-              <input type="text" name="mobile_no" placeholder=""/><br>
-              <lable>Username</lable>
-              <input type="text" placeholder="Username" name="username" required onkeyup="showHint(this.value)"><br>
-              <span id="txtHint"></span>
-              <input type="submit" name="submit" value="Save"/>
-            </form>
-          </div>    
+              <div id="ep"><input type="file" name="p" id="p"></div>
+                <div id="row1">
+                  <div>First Name</div>
+                  <div>Last Name</div>
+                </div>
+                <div id="row2">
+                  <div><input type="text" id="pfn" name="first_name" placeholder="<?php echo $_SESSION['first_name'];?>"/></div>                
+                  <div><input type="text" id="pln" name="last_name" placeholder="<?php echo $_SESSION['last_name'];?>"/></div>
+                </div>
+                <div id="row3">
+                  <div>Email</div>
+                  <div>Mobile</div>
+                </div>
+                <div id="row4">
+                  <div><input type="text" id="pemail" name="email" placeholder="<?php echo $_SESSION['email'];?>"/></div>
+                  <div><input type="text" id="pmobile" name="mobile_no" placeholder="<?php echo $_SESSION['mobile_no'];?>"/></div>
+                </div>
+                <div id="row5">
+                  <div>Username</div>
+                </div>
+                <div id="row6">
+                  <div><input type="text" id="pusername" placeholder="<?php echo $_SESSION['username'];?>" name="username" required onkeyup="showHint(this.value)"></div>
+                </div>
+                <div id="row8"><input type="submit" name="submit" value="Save"/></div>                
+                <div id="row9"><span id="txtHint"></span></div>
+            </form>          
+          </div>
         </div>
         <div id="cpass-section">
           <center><h2>Change Password</h2></center><hr>
