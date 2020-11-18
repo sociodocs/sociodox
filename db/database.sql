@@ -42,7 +42,7 @@ create table donation(
     first_name varchar(50) not null,
     last_name varchar(50) not null,
     email varchar(100),
-    mobile_no bigint(50),
+    mobile_no bigint,
     pan varchar(10),
     country varchar(20),
     amount_status varchar(50),
@@ -68,10 +68,11 @@ insert into admin VALUES('devis','123');
 
 create table profile(
     pid serial NOT NULL PRIMARY key,
-    pname varchar(20) NOT NULL,
-    sex varchar(10) NOT NULL,
-    joined timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    dp varchar(20) NOT NULL,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    email varchar(100),
+    mobile_no bigint,    
+    dp varchar(50) NOT NULL,
     username varchar(50) REFERENCES users(username) on delete cascade on update set null
 );
 

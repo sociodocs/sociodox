@@ -14,7 +14,6 @@ position: relative;
 margin-left: 10px;
 text-align: center;
 font-size: 20px; 
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
 }
 
 .sidebar2{
@@ -23,7 +22,6 @@ background-color: #E5E5E5;
 margin-right: 10px;
 text-align: center;
 font-size: 25px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
 }
 
 .main{
@@ -37,8 +35,7 @@ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
   color: #FFFFFF;
   margin-top: 5px;
   font-size: 20px;
-  text-align: center;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  text-align: center;  
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
 }
   
@@ -54,8 +51,7 @@ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 10px;
-  margin-bottom: 5px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  margin-bottom: 5px;  
 }
   
 .header3{
@@ -227,4 +223,59 @@ span{
   height: 30px;
   margin-left: 20px;
   background-color: aqua;
+}
+
+.dprofile-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.dprofile{
+  display: flex;
+  flex-basis:260px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dprofile .dprofile-dp{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  transition: 400ms;
+}
+
+.user-name{
+  margin-top: 30px;
+  margin-bottom: 0px;
+  font-size: 25px;
+}
+
+.dprofile h3{
+  margin-top: 10px;
+}
+
+.dprofile h5{
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+
+.p-details{
+  display: flex;
+  flex-basis:260px;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;  
+}
+.j .c .d{
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 200px;
 }

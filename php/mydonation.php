@@ -7,16 +7,16 @@ session_start();
     echo $semail."<br>"; 
     if(filter_var($semail,FILTER_VALIDATE_EMAIL)){
         
-        $query = pg_query($conn, "select * from donation where email='$semail'");
+        $dquery = pg_query($conn, "select * from donation where email='$semail'");
     }
 
     else{
           
-        $query = pg_query($conn, "select * from donation where mobile_no='$semail'");
+        $dquery = pg_query($conn, "select * from donation where mobile_no='$semail'");
      
      }
    
-    $exists = pg_num_rows($query); 
+    $exists = pg_num_rows($dquery); 
     if($exists > 0){
         
         $sql2 = "select sum(amount) as amount_sum from donation";

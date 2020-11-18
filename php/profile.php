@@ -164,8 +164,39 @@
         <div id="blog-section">
           This is blog
         </div>
-        <div id="profile-section">
-          This is Profile
+        <div id="profile-section">           
+          <div class="dprofile-card">
+              <div class="dprofile">
+                <img src="../images/aditya.jpg" class="dprofile-dp">
+                <h3 class="user-name"> <?php echo $_SESSION['username'];?> </h3>
+                <h5> Aditya Karale </h5>
+              </div>
+          </div>
+              <div class="p-details">
+                <div class="j">
+                        <?php
+                        $username=$_SESSION['username'];
+                          $j = "SELECT count(org_name) as j FROM organization";
+                        /*$sql = "SELECT org_name FROM organization where org_id =
+                        (
+                            select org_id from organization where org_id = 
+                            (select users_organization.org_id from users_organization where users_organization.username='$username')
+                        )";
+                        */
+                        $join = pg_query($conn,$j);
+                        $row = pg_fetch_assoc($join);
+                        $joined = $row['j'];
+                        echo $joined;
+                        ?>
+                        <h5>Joined</h5>
+                </div>
+                <div class="c">
+                  <h5>Comments</h5>
+                </div>
+                <div class="d">
+                  <h5>Donation</h5>                
+                </div>
+              </div>          
         </div>
         <div id="show-all-section">
           All Organization
@@ -174,7 +205,25 @@
           Settings
         </div>
         <div id="edit-section">
-          Edit Profile
+          Edit Profile:
+          <div class="edit-p">
+            <form method="POST" action="editprofile.php" enctype="multipart/form-data">
+              <lable>Profile Image:</lable>
+              <input type="file" name="p" id="p"><br>
+              <lable>First Name</lable>
+              <input type="text"  name="first_name" placeholder=""/><br>
+              <lable>Last Name</lable>
+              <input type="text" name="last_name" placeholder=""/><br>
+              <lable>Email</lable>
+              <input type="text" name="email" placeholder=""/><br>
+              <lable>Mobile</lable>
+              <input type="text" name="mobile_no" placeholder=""/><br>
+              <lable>Username</lable>
+              <input type="text" placeholder="Username" name="username" required onkeyup="showHint(this.value)"><br>
+              <span id="txtHint"></span>
+              <input type="submit" name="submit" value="Save"/>
+            </form>
+          </div>    
         </div>
         <div id="cpass-section">
           <center><h2>Change Password</h2></center><hr>
