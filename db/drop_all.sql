@@ -1,9 +1,0 @@
-DROP TABLE IF EXISTS users_organization;
-DROP TABLE IF EXISTS profile;
-DROP TABLE IF EXISTS admin;
-DROP TABLE IF EXISTS comment;
-drop table if EXISTS donation;
-DROP TABLE IF EXISTS organization;
-drop table if EXISTS newsletter;
-drop table if EXISTS contact;
-drop table if EXISTS users;
