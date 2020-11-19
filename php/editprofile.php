@@ -7,7 +7,7 @@
         $last_name = $_POST["last_name"];
         $email = $_POST["email"];
         $mobile  = $_POST["mobile_no"];
-        $username = $_SESSION['username'];        
+        $username = $_POST['username'];        
         $filename = ($_FILES['p']['name']);
         echo "$first_name";
         echo "$last_name";
@@ -46,8 +46,19 @@
             Print '<script>window.location.assign("profile.php");</script>'; 
         
         }
-        
-        $sql1 = "INSERT INTO profile VALUES (default,'$first_name','$last_name','$email','$mobile','$profileimage','$username')";
+        $susername = $_SESSION['username'];
+        $qrys="UPDATE users SET username='$username',
+                                email='$email',
+                                mobile_no='$mobile'
+                                WHERE username='$susername'";
+        $results= pg_query($conn,$qrys);        
+        $sql1 = "UPDATE profile SET first_name='$first_name',
+                                    last_name='$last_name',
+                                    email='$email',
+                                    mobile_no='$mobile',
+                                    dp='$profileimage',
+                                    username='$username'
+                                    where username='$username'";
         $result = pg_query($conn,$sql1) or die("could");
             if($result){
                 Print '<script>alert("Successfully edited the profile.");</script>'; 
@@ -66,6 +77,7 @@
                     $_SESSION['email'] = $row['email']; 
                     $_SESSION['mobile_no'] = $row['mobile_no']; 
                     $_SESSION['dp'] = $row['dp']; 
+                    $_SESSION['username']=$row['username'];
                 }
             }
 

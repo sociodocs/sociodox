@@ -194,6 +194,14 @@
                   <h5>Comments</h5>
                 </div>
                 <div class="d">
+                    <?php
+                    $semail=$_SESSION['email'];
+                    $smobile=$_SESSION['mobile_no'];
+                        $dsql = "select sum(amount) as amount_sum from donation where email='$semail' and mobile_no='$smobile'";
+                        $rsum = pg_query($conn,$dsql) or die("query fail !");
+                        $row = pg_fetch_assoc($rsum);
+                        $sum = $row['amount_sum'];                        
+                    echo $sum;?>
                   <h5>Donation</h5>                
                 </div>
               </div>          

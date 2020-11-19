@@ -69,6 +69,7 @@
 					$_SESSION['email'] = $row['email']; 
 					$_SESSION['mobile_no'] = $row['mobile_no']; 
 					$_SESSION['dp'] = $row['dp']; 
+					$_SESSION['username']=$row['username'];
 					header("location:profile.php"); 
 				}
 				
