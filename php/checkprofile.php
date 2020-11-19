@@ -30,7 +30,6 @@
 			Print '<script>alert("Please set up your profile");</script>'; 
 			Print '<script>window.location.assign("setprofile.php");</script>'; 
 		}
-
     pg_close($conn);
 
 ?>

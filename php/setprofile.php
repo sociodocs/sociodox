@@ -50,7 +50,7 @@
         $sql1 = "INSERT INTO profile VALUES (default,'$first_name','$last_name','$email','$mobile','$profileimage','$username')";
         $result = pg_query($conn,$sql1) or die("could");
             if($result){
-                Print '<script>alert("Successfully edited the profile.");</script>'; 
+                Print '<script>alert("You have successfully setup the profile.");</script>'; 
                 Print '<script>window.location.assign("profile.php");</script>'; 
                 }
             else {
@@ -68,7 +68,12 @@
                     $_SESSION['dp'] = $row['dp']; 
                 }
             }
-
+            
+        $qrys="UPDATE users SET username='$username',
+                                email='$email',
+                                mobile_no='$mobile'
+                                WHERE username='$username'";
+        $results= pg_query($conn,$qrys);  
         pg_close($conn);		 
 
     }
