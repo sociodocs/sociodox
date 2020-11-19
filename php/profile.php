@@ -195,13 +195,13 @@
                 </div>
                 <div class="d">
                     <?php
-                    $semail=$_SESSION['email'];
-                    $smobile=$_SESSION['mobile_no'];
-                        $dsql = "select sum(amount) as amount_sum from donation where email='$semail' and mobile_no='$smobile'";
-                        $rsum = pg_query($conn,$dsql) or die("query fail !");
-                        $row = pg_fetch_assoc($rsum);
-                        $sum = $row['amount_sum'];                        
-                    echo $sum;?>
+                     $semail=$_SESSION['email'];
+                     $smobile=$_SESSION['mobile_no'];
+                     $dsql = pg_query($conn,"select sum(amount) as amount_sum from donation where email='$semail' and mobile_no='$smobile'");                    
+                         $row = pg_fetch_assoc($dsql);
+                         $sum = $row['amount_sum'];                        
+                         echo $sum.".Rs";
+                    ?>
                   <h5>Donation</h5>                
                 </div>
               </div>          
