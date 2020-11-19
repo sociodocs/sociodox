@@ -34,7 +34,7 @@ val_con.addEventListener('submit', (e) => {
         cln_span.style.color = "#000";
     }
 
-    if(!ValidateName(cemail)){
+    if(!ValidateEmail(cemail)){
 
         cem_span.innerHTML = "Email is Invalid";
         cem_span.style.color = "red";
