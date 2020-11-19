@@ -1,0 +1,51 @@
+.trees{
+    max-width: 1761px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    transition: all ease-out 0.5s;
+}
+
+.trees img{
+    width: 50%;
+    height: 50%;
+    display: cover;
+}
+
+.trees-text{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.trees-text h1{
+    font-weight: 200;
+    font-size: 64px;
+    margin: 0px;
+}
+
+.trees-text p{
+    font-weight: 100;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1250px){
+    .trees{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        transition: all ease-in 0.5s;
+    }
+
+    .trees img{
+        width: 100%;
+    }
+
+    .trees-text{
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,54 @@
+.feed{
+    max-width: 1761px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    transition: all ease-out 0.5s;
+}
+
+.feed img{
+    width: 40%;
+    height: 40%;
+    display: cover;
+}
+
+.feed-text{
+    width: 80%;
+    margin-left: 50px;
+    margin-right:50px;
+}
+
+#feed-heading{
+    font-weight: 300;
+    font-size: 64px;
+    margin: 0px;
+}
+
+#feed-para{
+    font-weight: 100;
+    font-size: 36px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 1250px){
+
+    .feed{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        transition: all ease-in 0.5s;
+    }
+
+    .feed img{
+        width: 100%;
+    }
+
+    .feed-text{
+        margin-top: 50px;
+    }
+}

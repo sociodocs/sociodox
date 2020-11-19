@@ -1,0 +1,63 @@
+#our-team{
+    position: static;
+    max-width: 1761px;
+    margin-top: 950px;
+}
+
+#our-team h2{
+   font-size: 30px;
+   text-align: center; 
+}
+
+.member-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.member{
+    display: flex;
+    flex-basis:260px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member .member-dp{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    transition: 400ms;
+}
+
+.user-name{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-size: 25px;
+}
+
+.member h3{
+    margin-top: 10px;
+}
+
+.member h5{
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 1150px){
+    .member-card{
+        flex-direction: column;
+    }
+
+    .member{
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

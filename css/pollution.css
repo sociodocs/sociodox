@@ -1,0 +1,70 @@
+.pollution{
+    max-width: 1761px;
+    margin-top: -30px;
+}
+
+.pollution-img{
+    width: 100%;
+    padding-top: 30%;
+    background: url('../images/home/air-pollution.jpg');
+    background-size: cover;
+}
+
+.pollution h1{
+    text-align: left;
+    margin-top: -240px;
+    margin-left: 4%;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 300;
+    transition: all ease-out 0.5s;
+}
+
+.pollution h2{
+    text-align: left;
+    margin-top: -40px;
+    margin-left: 4%;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 200;
+    transition: all ease-out 0.5s;
+}
+
+.pollution p{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 25px;
+    margin-top: 10px;
+    margin-left: 4%;
+    color: #fff;
+    transition: all ease-out 0.5s;
+}
+
+@media screen and (max-width: 900px){
+    .pollution h1{
+        text-align: left;
+        margin-top: -150px;
+        margin-right: 4%;
+        color: #fff;
+        font-size: 25px;
+        transition: all ease-in 0.5s;
+    }
+    
+    .pollution h2{
+        text-align: left;
+        margin-top: -30px;
+        margin-right: 4%;
+        color: #fff;
+        font-size: 20px;
+        transition: all ease-in 0.5s;
+    }
+    
+    .pollution p{
+        text-align: left;
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: -5px;
+        transition: all ease-in 0.5s;
+    }
+}

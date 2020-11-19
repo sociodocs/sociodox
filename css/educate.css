@@ -1,0 +1,78 @@
+.educate{
+    max-width: 1761px;
+}
+
+.educate-img{
+    width: 100%;
+    padding-top: 40%;
+    background: url('../images/home/Educate.jpg');
+    background-size: cover;
+}
+
+.educate h1{
+    text-align: right;
+    margin-top: -150px;
+    margin-right: 4%;
+    color: #fff;
+    font-size: 50px;
+    transition: all ease-out 0.5s;
+}
+
+.educate h2{
+    text-align: right;
+    margin-top: -50px;
+    margin-right: 4%;
+    color: #fff;
+    font-size: 30px;
+    transition: all ease-out 0.5s;
+}
+
+.educate p{
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 50px;
+    margin-top: 60px;
+    transition: all ease-out 0.5s;
+}
+
+.educate button{
+    border: none;
+    width: 350px;
+    height: auto;
+    padding: 10px 15px 10px 15px;
+    background-color: #E5E5E5;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.educate button:hover {
+    opacity: 0.8;
+}
+@media screen and (max-width: 900px){
+    .educate h1{
+        text-align: right;
+        margin-top: -90px;
+        margin-right: 4%;
+        color: #fff;
+        font-size: 35px;
+        transition: all ease-in 0.5s;
+    }
+    
+    .educate h2{
+        text-align: right;
+        margin-top: -35px;
+        margin-right: 4%;
+        color: #fff;
+        font-size: 20px;
+        transition: all ease-in 0.5s;
+    }
+    
+    .educate p{
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+        margin-top: 25px;
+        transition: all ease-in 0.5s;
+    }
+}

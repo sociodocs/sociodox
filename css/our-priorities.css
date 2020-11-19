@@ -1,0 +1,61 @@
+#our-priorities{
+    max-width: 1761px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#our-priorities h2{
+    font-size: 30px;
+    margin: 0px;
+}
+
+#our-priorities h1{
+    font-size: 50px;
+    margin: 0px;
+}
+
+ #our-priorities h3{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.priority-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 80px 20px;
+}
+
+.priority{
+    display: flex;
+    flex-basis:260px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.priority .priority-logo{
+    height: 100px;
+    width: 100px;
+    transition: 400ms;
+}
+
+.priority h3{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+@media only screen and (max-width: 1150px){
+    .priority-card{
+        flex-direction: column;
+    }
+
+    .priority{
+        margin: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
