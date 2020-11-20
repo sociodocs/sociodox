@@ -10,7 +10,7 @@
 <html>
     <head>
         <title>Profile-Page</title>
-        <link rel="stylesheet" href="../main.css">
+        <link rel="stylesheet" href="../css/profile.css">
     </head>
   <body>
     <div class="profile">
