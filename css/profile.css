@@ -189,6 +189,7 @@ img{
 .edit-p{
   position: relative;
   top:  -50px;
+  font-family: 'Poppins';  
 }
 #inside{
   position: absolute;
