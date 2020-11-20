@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog (2).css" />
+</head>
+
+<body>
+    <h1>Blogs</h1>
+    <main>
+        <div class="div1">
+            <img src="blog image/Blog.png"/>
+            
+            <h2>
+                Teams Trees
+                <p>
+                    just now
+                <p>
+            </h2>
+            <br>
+           
+            
+        </div>
+        <div class="div2">
+           <img src="blog image/Blog.png"/>
+        </div>
+        <div class="div3">
+            <p>
+            Many chapters contain a portion from a source,clues from which historians write history. Read these carefully, and
+            discuss the questions they contain.Many of our sources are visual. Each illustration has a story to tell.You will also
+            find maps. Look at these and try to locate the places mentioned in the lessons.so all the content carried in the first page with all the information<span id="dots">...</span>.
+            <span id="more">Many chapters contain a portion from a source,clues from which historians write history. Read these carefully, and
+            discuss the questions they contain.Many of our sources are visual. Each illustration has a story to tell.You will also
+            find maps. Look at these and try to locate the places mentioned in the lessons.so all the content carried in the first
+            page with all the information.
+            </span>
+            <button type="button" id="read" onclick="read()" >Read more </button>
+            </p>
+        </div>
+        <script type="text/javascript" >
+         var i = 0;
+        function read(){
+            if(!i){
+           document.getElementById("more").style.display = "inline";
+           document.getElementById("dots").style.display = "none";
+            document.getElementById("read").innerHTML= "Read less";
+            i = 1;
+        }else{
+            document.getElementById("more").style.display = "none";
+                document.getElementById("dots").style.display = "inline";
+                document.getElementById("read").innerHTML= "Read more";
+                i = 0;
+            
+        }}
+        
+        </script>
+        <hr />
+        <div class="div4">
+                <img src="blog image/Blog.png"/>
+            like
+            <img src="blog image/Blog.png" />
+         comment
+         <img src="blog image/Blog.png" />
+         share
+        </div>
+    </main>
+    
+</body>
+
+</html>
