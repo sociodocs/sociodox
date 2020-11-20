@@ -202,7 +202,7 @@
                      $dsql = pg_query($conn,"select sum(amount) as amount_sum from donation where email='$semail' and mobile_no='$smobile'");                    
                          $row = pg_fetch_assoc($dsql);
                          $sum = $row['amount_sum'];                        
-                         echo $sum.".Rs";
+                         echo $sum."<h4></h4>";
                     ?>
                   <h5>Donation</h5>                
                 </div>
