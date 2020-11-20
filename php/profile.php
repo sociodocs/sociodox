@@ -11,11 +11,12 @@
     <head>
         <title>Profile-Page</title>
         <link rel="stylesheet" href="../css/profile.css">
+        <link rel="stylesheet" href="../main.css">
     </head>
   <body>
     <div class="profile">
       <div class="box header1">
-        <div class="logo">SOCIODOX</div>
+        <div class="plogo">SOCIODOX</div>
         <div class="people">For people</div>
       </div>
       <div class="box header2">
@@ -69,16 +70,17 @@
                   </body>
                 </html>
         </div><br>
-        <button id="show-all">Show all</button>
+        <a id="show-all">Show all</a>
       </div>
       <div class="box sidebar2"><br>
-        <a id="settings" href="#">Settings</a><br>
+        <a id="settings" href="#"><h3>Settings</h3></a><br>
           <div id="inside">
-            <a id="edit" href="#">Edit Profile</a><br>
+            <img id="elogo" src="../logo/edit.png"/>
+            <a id="edit" href="#">Edit Profile</a><br><br>
+            <img id="elogo" src="../logo/padlock.png"/>
             <a id="cpass" href="#">Change Password</a><br>
-          </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-           
-            <a style="color:red;" href="logout.php">Logout</a> 
+          </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>           
+            <a id="lout" href="logout.php">Logout</a> 
         </div>
       <div class="box main">
         <div id="chat-section">
@@ -214,11 +216,12 @@
           <div class="dprofile-card">
               <div class="dprofile">
                 <img src="<?php echo $_SESSION['dp'];?>" class="dprofile-dp">
+                <img id="editdp" src="../logo/edit-DP.png"/>
               </div>
           </div>         
           <div class="edit-p">
             <form method="POST" action="editprofile.php" enctype="multipart/form-data">
-              <div id="ep"><input type="file" name="p" id="p"></div>
+              <div id="ep"><input type="file" name="p" id="p"/></div>
                 <div id="row1">
                   <div>First Name</div>
                   <div>Last Name</div>
