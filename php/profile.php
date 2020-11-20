@@ -7,12 +7,14 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Profile-Page</title>
-        <link rel="stylesheet" href="../css/profile.css">
-        <link rel="stylesheet" href="../main.css">
-    </head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Profile-Page</title>
+      <link rel="stylesheet" href="../css/profile.css">
+      <link rel="stylesheet" href="../main.css">
+  </head>
   <body>
     <div class="profile">
       <div class="box header1">
