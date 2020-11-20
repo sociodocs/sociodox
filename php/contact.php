@@ -27,7 +27,7 @@
     $result = pg_query($conn,$sql1) or die("query fails"); 
 		if($result){
 			Print '<script>alert("Thank you For contacting us!");</script>'; 
-		    Print '<script>window.location.assign("index.html");</script>'; 
+		    Print '<script>window.location.assign("../index.html");</script>'; 
             }
 		 else {
 			 echo "error";
