@@ -3,12 +3,42 @@
 	if(isset($_POST['submit'])){
         session_start();
         require_once("database.php"); 
-        $first_name = $_POST["first_name"];
-        $last_name = $_POST["last_name"];
-        $email = $_POST["email"];
-        $mobile  = $_POST["mobile_no"];
-        $username = $_POST['username'];        
-        $filename = ($_FILES['p']['name']);
+        if($_POST['first_name']!=""){
+            $first_name = $_POST["first_name"];
+        }else{
+            $first_name =$_SESSION['first_name'];
+        }
+        
+        if($_POST['last_name']!=""){
+            $last_name = $_POST["last_name"];
+        }else{
+            $last_name =$_SESSION['last_name'];
+        }
+        
+        if($_POST['email']!=""){
+            $email = $_POST["email"];
+        }else{
+            $email =$_SESSION['email'];
+        }
+        
+        if($_POST['mobile_no']!=""){
+            $mobile  = $_POST["mobile_no"];
+        }else{
+            $mobile =$_SESSION['mobile_no'];
+        }
+        
+        if($_POST['username']!=""){
+            $username = $_POST['username'];        
+        }else{
+            $username =$_SESSION['username'];
+        }
+
+        if($_FILES['p']['name']!=""){
+            $filename = ($_FILES['p']['name']);
+        }else{
+            $filename =$_SESSION['dp'];
+        }
+         
         echo "$first_name";
         echo "$last_name";
         echo "$email";
@@ -60,14 +90,6 @@
                                     username='$username'
                                     where username='$username'";
         $result = pg_query($conn,$sql1) or die("could");
-            if($result){
-                Print '<script>alert("Successfully edited the profile.");</script>'; 
-                Print '<script>window.location.assign("profile.php");</script>'; 
-                }
-            else {
-                echo "error";
-                }
-        
         $sql2 = pg_query($conn,"select * from profile where username='$username'") or die("could");
             if($sql2){
                 while($row = pg_fetch_assoc($sql2))
@@ -80,6 +102,16 @@
                     $_SESSION['username']=$row['username'];
                 }
             }
+
+        
+            if($result){
+                Print '<script>alert("Successfully edited the profile.");</script>'; 
+                Print '<script>window.location.assign("profile.php");</script>'; 
+                }
+            else {
+                echo "error";
+                }
+        
 
         pg_close($conn);		 
 

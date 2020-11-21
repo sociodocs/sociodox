@@ -95,16 +95,16 @@
                 <div>Last Name</div>
             </div>
             <div id="row2">
-                <div><input type="text" id="pfn" name="first_name" placeholder=""/></div>                
-                <div><input type="text" id="pln" name="last_name" placeholder=""/></div>
+                <div><input type="text" id="pfn" name="first_name" placeholder="" required/></div>                
+                <div><input type="text" id="pln" name="last_name" placeholder="" required/></div>
             </div>
             <div id="row3">
                 <div>Email</div>
                 <div>Mobile</div>
             </div>
             <div id="row4">
-                <div><input type="text" id="pemail" name="email" placeholder=""/></div>
-                <div><input type="text" id="pmobile" name="mobile_no" placeholder=""/></div>
+                <div><input type="text" id="pemail" name="email" placeholder="" required/></div>
+                <div><input type="text" id="pmobile" name="mobile_no" placeholder="" required/></div>
             </div>
             <div id="row5">
                 <div>Username</div>

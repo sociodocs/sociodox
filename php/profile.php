@@ -244,7 +244,7 @@
                   <div>Username</div>
                 </div>
                 <div id="row6">
-                  <div><input type="text" id="pusername" placeholder="<?php echo $_SESSION['username'];?>" name="username" required onkeyup="showHint(this.value)"></div>
+                  <div><input type="text" id="pusername" placeholder="<?php echo $_SESSION['username'];?>" name="username" onkeyup="showHint(this.value)"></div>
                 </div>
                 <div id="row8"><input type="submit" name="submit" value="Save"/></div>                
                 <div id="row9"><span id="txtHint"></span></div>
