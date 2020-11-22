@@ -26,25 +26,21 @@
         }else{
             $mobile =$_SESSION['mobile_no'];
         }
-        
-        if($_POST['username']!=""){
-            $username = $_POST['username'];        
-        }else{
-            $username =$_SESSION['username'];
-        }
 
         if($_FILES['p']['name']!=""){
             $filename = ($_FILES['p']['name']);
+            echo $filename;
         }else{
-            $filename =$_SESSION['dp'];
-        }
-         
+            $filename ="";
+        }        
         echo "$first_name";
         echo "$last_name";
         echo "$email";
-        echo $mobile;
-        echo $username;
+        echo $mobile;        
         echo $filename;
+
+	    if($filename != "") {
+         
         $target_file = "../profileimage/". basename($filename);            
 			$uploadOk = 1;
 			$fileuploaded=0;
@@ -66,7 +62,11 @@
     		}
     		else{
     			$profileimage="";	
-    		}
+            }
+         }else{
+            $profileimage="";	
+         }
+    
         echo "<br>";
         if(filter_var($email,FILTER_VALIDATE_EMAIL)){
             echo "email is valid";
@@ -76,19 +76,25 @@
             Print '<script>window.location.assign("profile.php");</script>'; 
         
         }
-        $susername = $_SESSION['username'];
-        $qrys="UPDATE users SET username='$username',
-                                email='$email',
+        $username = $_SESSION['username'];
+        $qrys="UPDATE users SET email='$email',
                                 mobile_no='$mobile'
-                                WHERE username='$susername'";
+                                WHERE username='$username'";
         $results= pg_query($conn,$qrys);        
+        if($profileimage != "") {
         $sql1 = "UPDATE profile SET first_name='$first_name',
                                     last_name='$last_name',
                                     email='$email',
                                     mobile_no='$mobile',
-                                    dp='$profileimage',
-                                    username='$username'
+                                    dp='$profileimage'                                    
                                     where username='$username'";
+        }else{            
+        $sql1 = "UPDATE profile SET first_name='$first_name',
+                                    last_name='$last_name',
+                                    email='$email',
+                                    mobile_no='$mobile'                                                                        
+                                    where username='$username'";
+        }                                    
         $result = pg_query($conn,$sql1) or die("could");
         $sql2 = pg_query($conn,"select * from profile where username='$username'") or die("could");
             if($sql2){

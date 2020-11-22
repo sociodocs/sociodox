@@ -43,7 +43,7 @@
         }
         else{
             Print '<script>alert("Invalid email ! Please Enter again.");</script>'; 
-            Print '<script>window.location.assign("profile.php");</script>'; 
+            Print '<script>window.location.assign("setprofile.php");</script>'; 
         
         }
         
@@ -106,12 +106,12 @@
                 <div><input type="text" id="pemail" name="email" placeholder="" required/></div>
                 <div><input type="text" id="pmobile" name="mobile_no" placeholder="" required/></div>
             </div>
-            <div id="row5">
+            <!-- <div id="row5">
                 <div>Username</div>
-            </div>
-            <div id="row6">
+            </div> -->
+            <!-- <div id="row6">
                 <div><input type="text" id="pusername" placeholder="" name="username" required ></div>
-            </div>
+            </div> -->
             <div id="row8"><input type="submit" name="submit" value="Save"/></div>             
         </form>               
     </body>

@@ -223,7 +223,7 @@
           </div>         
           <div class="edit-p">
             <form method="POST" action="editprofile.php" enctype="multipart/form-data">
-              <div id="ep"><input type="file" name="p" id="p"/></div>
+              <div id="ep"><input type="file" name="p" id="p" default="$_SESSION['dp']"/></div>
                 <div id="row1">
                   <div>First Name</div>
                   <div>Last Name</div>
@@ -240,12 +240,12 @@
                   <div><input type="text" id="pemail" name="email" placeholder="<?php echo $_SESSION['email'];?>"/></div>
                   <div><input type="text" id="pmobile" name="mobile_no" placeholder="<?php echo $_SESSION['mobile_no'];?>"/></div>
                 </div>
-                <div id="row5">
+                <!-- <div id="row5">
                   <div>Username</div>
                 </div>
                 <div id="row6">
-                  <div><input type="text" id="pusername" placeholder="<?php echo $_SESSION['username'];?>" name="username" onkeyup="showHint(this.value)"></div>
-                </div>
+                  <div><input type="text" id="pusername" placeholder="" name="username" onkeyup="showHint(this.value)"></div>
+                </div> -->
                 <div id="row8"><input type="submit" name="submit" value="Save"/></div>                
                 <div id="row9"><span id="txtHint"></span></div>
             </form>          

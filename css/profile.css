@@ -42,6 +42,7 @@ margin-right: 10px;
   grid-area: header1;
   background-color: #FFFFFF;
   position: relative; 
+  max-width: 100%;
 }
 
 .header2{
@@ -50,7 +51,7 @@ margin-right: 10px;
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 5px;
-  background-color: #E5E5E5B0;
+  background-color: #FFFFFF;
 }
   
 .header3{
@@ -99,7 +100,7 @@ hr{
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .people{
-  position: absolute;
+  position: relative;
   font-size: 15px;
   width: 100%;
   left: 190px;
@@ -109,16 +110,17 @@ hr{
 #search{
   width: 80%;
   height: 30px;  
-  position: absolute;
-  left: 70px;
+  position: relative;
+  left: 1px;
   top:  10px;
+  background-color: #E5E5E5B0;
   text-align: center;
   border: none;
 }
 #slogo{
-  position: absolute;
-  top: 10px;
-  left: 700px;
+  position: relative;
+  top: -17px;
+  left: 330px;
   cursor: pointer;
 }
 
@@ -329,8 +331,7 @@ span{
   margin-top: 10px;
   margin-left: 20px;
   justify-content: space-around;
-  align-items: center;
-  
+  align-items: center;  
 }
 
 #pfn,#pln,#pemail,#pmobile,#pusername{
