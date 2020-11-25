@@ -81,3 +81,8 @@ create table users_organization(
     org_id serial REFERENCES organization(org_id) on delete cascade on update set null
 );
 
+CREATE TABLE finalchat(
+  uname varchar(20) NOT NULL,
+  msg text NOT NULL,
+  dt timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

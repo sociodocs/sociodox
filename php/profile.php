@@ -85,83 +85,145 @@
             <a id="lout" href="logout.php">Logout</a> 
         </div>
       <div class="box main">
-        <div id="chat-section">
-              <!doctype html>
+        <div id="chat-section">        
+            <?php
+              if (isset($_POST['submit'])) {
+                  // Escape user inputs for security 
+                  $un = pg_escape_string(
+                      $conn,
+                      $_REQUEST['uname']
+                  );
+                  $m = pg_escape_string(
+                      $conn,
+                      $_REQUEST['msg']
+                  );
+                  date_default_timezone_set('Asia/Kolkata');
+                  //$ts = date('y-m-d h:ia');
+
+                  // Attempt insert query execution 
+                  $sql = "INSERT INTO finalchat (uname, msg, dt) 
+                  VALUES ('$un', '$m', CURRENT_TIMESTAMP)";
+                  if (pg_query($conn, $sql)) {;
+                  } else {
+                      echo "ERROR: Message not sent!!!";
+                  }
+              }
+              ?>
               <html>
               <head>
-                <link rel="stylesheet" href="../css/chatbox.css"/>
-                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                  <script>
-                      $(document).ready(function() {
-                        $(document).bind('keypress', function(e) {
-                          if (e.keyCode == 13) {
-                            $('#my_form').submit();
-                            $('#comment').val("");
-                            }
-                          });
-                      });
-                  </script>
-                <script type="text/javascript">
-                  function post()
-                  {
-                      var comment = document.getElementById("comment").value;
-                      var name = document.getElementById("username").value;
-                      if(comment && name)
-                      {
-                        $.ajax
-                      (
-                        {
-                          type: 'post',
-                          url: 'comments.php',
-                          data: 
-                          {
-                            user_comm:comment,
-                            user_name:name
-                          },
-                          success: function (response) 
-                          {
-                          document.getElementById("comment").value="";
-                          }
-                        }
-                      );
-                    }
-                    return false;
-                  }
-                </script>
-                <script>
-                  function autoRefresh_div()
-                    {
-                      $("#result").load("load.php").show();// a function which will load data from other file after x seconds
-                    }              
-                    setInterval('autoRefresh_div()', 2000);
-                </script>
-              </head>
-            <body>
-              <div id="container">
-                <div id="session-name">
-                  Your Name: <input type="text" value="<?= $_SESSION['username'] ?>" class="session-text" disabled>
-                </div>
-                <div id="result-wrapper">
-                  <div id="result">
-                    <?php
-                      include("load.php");
-                    ?>
+              <link rel="stylesheet" href="../css/chatbox.css">
+              </head>                              
+              <body onload="show_func()">
+                  <div id="container">
+                      <main>
+                          <header>
+                              <img src="https://s3-us-west-2.amazonaws.com/ 
+                    s.cdpn.io/1940306/ico_star.png" alt="">
+                              <div>
+                                  <h2>GROUP CHAT</h2>
+                              </div>
+                              <img src="https://s3-us-west-2.amazonaws.com/ 
+                    s.cdpn.io/1940306/ico_star.png" alt="">
+                          </header>
+
+                          <script>
+                              function show_func() {
+
+                                  var element = document.getElementById("chathist");
+                                  element.scrollTop = element.scrollHeight;
+
+                              }
+                          </script>
+
+                          <form id="myform" action="profile.php" method="POST">
+                              <div class="inner_div" id="chathist">
+                                  <?php
+                                  
+                                  $query = "SELECT * FROM finalchat";
+                                  $run = pg_query($conn,$query);
+                                  $i = 0;
+
+                                  while ($row = pg_fetch_array($run)) :
+                                      if ($i == 0) {
+                                          $i = 5;
+                                          $first = $row;
+                                  ?>
+                                          <div id="triangle1" class="triangle1"></div>
+                                          <div id="message1" class="message1">
+                                              <span style="color:white;float:right;">
+                                                  <?php echo $row['msg']; ?></span> <br />
+                                              <div>
+                                                  <span style="color:black;float:left; 
+              font-size:10px;clear:both;">
+                                                      <?php echo $row['uname']; ?>,
+                                                      <?php echo $row['dt']; ?>
+                                                  </span>
+                                              </div>
+                                          </div>
+                                          <br /><br />
+                                          <?php
+                                      } else {
+                                          if ($row['uname'] != $first['uname']) {
+                                          ?>
+                                              <div id="triangle" class="triangle"></div>
+                                              <div id="message" class="message">
+                                                  <span style="color:white;float:left;">
+                                                      <?php echo $row['msg']; ?>
+                                                  </span> <br />
+                                                  <div>
+                                                      <span style="color:black;float:right; 
+                  font-size:10px;clear:both;">
+                                                          <?php echo $row['uname']; ?>,
+                                                          <?php echo $row['dt']; ?>
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                              <br /><br />
+                                          <?php
+                                          } else {
+                                          ?>
+                                              <div id="triangle1" class="triangle1"></div>
+                                              <div id="message1" class="message1">
+                                                  <span style="color:white;float:right;">
+                                                      <?php echo $row['msg']; ?>
+                                                  </span> <br />
+                                                  <div>
+                                                      <span style="color:black;float:left; 
+                  font-size:10px;clear:both;">
+                                                          <?php echo $row['uname']; ?>,
+                                                          <?php echo $row['dt']; ?>
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                              <br /><br />
+                                  <?php
+                                          }
+                                      }
+                                  endwhile;
+                                  ?>
+                              </div>
+                              <div class="send">
+                                  <table>
+                                      <tr>
+                                          <th>
+                                              <input class="input1" type="text" id="uname" name="uname" placeholder="From">
+                                          </th>
+                                          <th>
+                                              <textarea id="msg" name="msg" rows='3' cols='50' placeholder="Type your message">
+                    </textarea></th>
+                                          <th>
+                                              <input class="input2" type="submit" id="submit" name="submit" value="send">
+                                          </th>
+                                      </tr>
+                                  </table> 
+                              </div>                             
+                          </form>
+                      </main>
                   </div>
-                </div>
-                <form method='post' action="#" onsubmit="return post();" id="my_form" name="my_form">
-                  <div id="form-container">
-                    <div class="form-text">
-                      <input type="text" style="display:none" id="username" value="<?= $_SESSION['username'] ?>">
-                      <textarea id="comment"></textarea>
-                      </div>
-                        <div class="form-btn">
-                          <button type="submit" ><img id="send" src="../logo/right-arrow.png"/></button>                           
-                        </div>
-                      </div>
-                </form>
-              </div>
-            </body>
-          </html>
+
+              </body>
+
+              </html>
         </div>
         <div id="blog-section">
           This is blog
@@ -193,6 +255,14 @@
                         <h5>Joined</h5>
                 </div>
                 <div class="c">
+                      <?php
+                        $username=$_SESSION['username'];
+                          $c = "SELECT count(msg) as c FROM finalchat";                        
+                        $comme = pg_query($conn,$c);
+                        $row = pg_fetch_assoc($comme);
+                        $comment = $row['c'];
+                        echo $comment;
+                        ?>
                   <h5>Comments</h5>
                 </div>
                 <div class="d">
