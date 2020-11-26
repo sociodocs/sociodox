@@ -13,11 +13,10 @@
 		$sql = "SELECT * from users WHERE mobile_no='$email_phone'"; 
 	}
 	$query = pg_query($conn, $sql);
-	$exists = pg_num_rows($query); 
-	echo "$exists";
+	$exists = pg_num_rows($query); 	
 	$table_users = "";
 	$table_users1 ="";
-	$table_password = "";
+	$table_password = "";	
 	if($exists > 0) 
 	{
 		while($row = pg_fetch_assoc($query)) 
@@ -27,9 +26,10 @@
 			$table_username =$row['username'];
 			$table_password = $row['password'];
 		}
-		if(($email_phone == $table_users) && ($password == $table_password)||($email_phone == $table_users1) && ($password == $table_password))
-		{
-				if($password == $table_password)
+		if(($email_phone == $table_users) &&  password_verify($password,$table_password)||($email_phone == $table_users1) &&  password_verify($password,$table_password))
+		{				
+				
+				if(password_verify($password,$table_password))
 				{
 					$_SESSION['email'] = $email_phone;
 					$_SESSION['username'] = $table_username;

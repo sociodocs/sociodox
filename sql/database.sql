@@ -12,7 +12,7 @@ create table users(
     username varchar(50) primary key,
     email varchar(100),
     mobile_no bigint,
-    password varchar(100) not null);
+    password varchar(255) not null);
 
 create table contact(
     contact_id serial primary key,

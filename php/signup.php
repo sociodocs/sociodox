@@ -6,6 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 $username = $_POST["username"];
 $password = $_POST["password"];
 $email_phone = $_POST["email_phone"];
+$hash = password_hash("$password", PASSWORD_DEFAULT);
 
     $bool = true;
 
@@ -25,10 +26,10 @@ $email_phone = $_POST["email_phone"];
 	if($bool) 
 	{   
 		if(filter_var($email_phone,FILTER_VALIDATE_EMAIL)){
-			$sql1 = "INSERT INTO users VALUES('$username','$email_phone',null,'$password')";
+			$sql1 = "INSERT INTO users VALUES('$username','$email_phone',null,'$hash')";
 		}
 		else{
-			$sql1 = "INSERT INTO users VALUES('$username',null,'$email_phone','$password')";
+			$sql1 = "INSERT INTO users VALUES('$username',null,'$email_phone','$hash')";
 		}
 		
 			$result = pg_query($conn,$sql1) or die("could");
