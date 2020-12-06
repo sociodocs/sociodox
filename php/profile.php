@@ -45,27 +45,31 @@
                     <?php
                         $username=$_SESSION['username'];
                           $sql = "SELECT org_name FROM organization";
-                        /*$sql = "SELECT org_name FROM organization where org_id =
-                        (
-                            select org_id from organization where org_id = 
-                            (select users_organization.org_id from users_organization where users_organization.username='$username')
-                        )";
-                        */
+                        // $sql = "SELECT org_name FROM organization where org_id =
+                        // (
+                        //     select org_id from organization where org_id = 
+                        //     (select users_organization.org_id from users_organization where users_organization.username='$username')
+                        // )";
+                        
                         $result = pg_query($conn,$sql);
-                        $exists = pg_num_rows($result); 
-                        if ($exists > 0){
-                        while($row = pg_fetch_assoc($result)) {
+                        $exists = pg_num_rows($result);
+                        $count = 0;
+                        if ($exists > 0){                          
+                        while($row = pg_fetch_assoc($result)) {                          
                     ?>
                         <table>              
                             <tr> 
                                 <td class="jorg">
                                   <img id="people" src="../logo/people.png"/>
-                                  <div class="org"> <?php echo $row["org_name"];?></div>
+                                  <div class="org" id="sorg"> <?php echo $row["org_name"];?></div>
                                   <img id="ar" src="../logo/right-arrow.png"/>
                                 </td><br>
                             </tr>
                         </table>
                     <?php
+                        $count++;
+                          if($count==2)
+                            break;
                           }
                         }
                     ?>
@@ -84,7 +88,7 @@
           </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>           
             <a id="lout" href="logout.php">Logout</a> 
         </div>
-      <div class="box main">
+      <div class="box main">        
         <div id="chat-section">        
             <?php
               if (isset($_POST['submit'])) {
@@ -280,6 +284,9 @@
         </div>
         <div id="show-all-section">
           All Organization
+        </div>
+        <div id="sorg-section">
+            <h3>Selected Organization details:</h3>
         </div>
         <div id="settings-section">
           Settings

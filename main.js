@@ -5,7 +5,7 @@ var show_all_section = document.getElementById("show-all-section");
 var settings_section = document.getElementById("settings-section");
 var edit_section = document.getElementById("edit-section");
 var cpass_section = document.getElementById("cpass-section");
-
+var sorg_section = document.getElementById("sorg-section");
 
 
 document.getElementById("chat").addEventListener("click", () => {
@@ -16,6 +16,7 @@ document.getElementById("chat").addEventListener("click", () => {
     settings_section.style.display = "none";
     edit_section.style.display = "none";
     cpass_section.style.display = "none";
+    sorg_section.style.display = "none";
 
 });
 
@@ -27,6 +28,7 @@ document.getElementById("blog").addEventListener("click", () => {
     settings_section.style.display = "none";
     edit_section.style.display = "none";
     cpass_section.style.display = "none";
+    sorg_section.style.display = "none";
 });
 
 document.getElementById("profile").addEventListener("click", () => {
@@ -37,6 +39,7 @@ document.getElementById("profile").addEventListener("click", () => {
     settings_section.style.display = "none";
     edit_section.style.display = "none";
     cpass_section.style.display = "none";
+    sorg_section.style.display = "none";
 });
 
 document.getElementById("show-all").addEventListener("click", () => {
@@ -47,6 +50,7 @@ document.getElementById("show-all").addEventListener("click", () => {
     settings_section.style.display = "none";
     edit_section.style.display = "none";
     cpass_section.style.display = "none";
+    sorg_section.style.display = "none";
 });
 
 document.getElementById("settings").addEventListener("click", () => {
@@ -57,6 +61,7 @@ document.getElementById("settings").addEventListener("click", () => {
     settings_section.style.display = "block";
     edit_section.style.display = "none";
     cpass_section.style.display = "none";
+    sorg_section.style.display = "none";
 });
 
 document.getElementById("edit").addEventListener("click", () => {
@@ -67,6 +72,7 @@ document.getElementById("edit").addEventListener("click", () => {
     settings_section.style.display = "none";
     edit_section.style.display = "block";
     cpass_section.style.display = "none";
+    sorg_section.style.display = "none";
 });
 
 document.getElementById("cpass").addEventListener("click", () => {
@@ -77,7 +83,21 @@ document.getElementById("cpass").addEventListener("click", () => {
     settings_section.style.display = "none";
     edit_section.style.display = "none";
     cpass_section.style.display = "block";
+    sorg_section.style.display = "none";
 });
+
+document.getElementById("sorg").addEventListener("click", () => {
+    chat_section.style.display = "none";
+    blog_section.style.display = "none";
+    profile_section.style.display = "none";
+    show_all_section.style.display = "none";
+    settings_section.style.display = "none";
+    edit_section.style.display = "none";
+    cpass_section.style.display = "none";
+    sorg_section.style.display = "block";
+
+});
+
 
 function checkPass()
 {
