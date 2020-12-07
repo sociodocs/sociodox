@@ -291,7 +291,11 @@ span{
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  transition: 400ms;
+  transition: transform .2s;
+}
+
+.dprofile-dp:hover{
+  transform: scale(1.5);
 }
 
 .user-name{
