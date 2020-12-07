@@ -117,12 +117,12 @@ hr{
   text-align: center;
   border: none;
 }
-#slogo{
+/* #slogo{
   position: relative;
   top: -17px;
   left: 330px;
   cursor: pointer;
-}
+} */
 
 #chat-section,#blog-section,#profile-section,#show-all-section,#sorg-section,#settings-section,#edit-section,#cpass-section{
   display: none;
@@ -238,7 +238,7 @@ img{
 }
 span{
   color: black;
-  padding: 10px 12px;
+  padding: 5px 6px;
   text-decoration: none;
   display: block;
 }

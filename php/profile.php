@@ -24,9 +24,8 @@
       <div class="box header2">
         <form action="#" method="POST"> 
           <div align=center class="search">
-               <div id="sbar"><input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off"/></div>
-               <div id="slogo"><img src="../logo/search.png" onclick="Search()"></div></br>
-              <div id="ts"></div>
+                <div id="sbar"><input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off" onkeyup="Search()"/></div>               
+                <div id="ts"></div>
           </div>
         </form>
       </div>
@@ -61,7 +60,7 @@
                             <tr> 
                                 <td class="jorg">
                                   <img id="people" src="../logo/people.png"/>
-                                  <div class="org" id="sorg"> <?php echo $row["org_name"];?></div>
+                                  <a class="org" id="sorg"> <?php echo $row["org_name"];?></a>
                                   <img id="ar" src="../logo/right-arrow.png"/>
                                 </td><br>
                             </tr>
@@ -121,13 +120,22 @@
                   <div id="container">
                       <main>
                           <header>
-                              <img src="https://s3-us-west-2.amazonaws.com/ 
-                    s.cdpn.io/1940306/ico_star.png" alt="">
-                              <div>
-                                  <h2>GROUP CHAT</h2>
-                              </div>
-                              <img src="https://s3-us-west-2.amazonaws.com/ 
-                    s.cdpn.io/1940306/ico_star.png" alt="">
+                            <div class="#">
+                                <label>Select Organization</label>
+                                <select name="org_name" id="org_name">
+                                    <?php
+                                        $result = pg_query($conn,"Select * from organization");
+
+                                        while($row = pg_fetch_assoc($result)){
+                                            $orgName = $row["org_name"];
+                                    ?>
+                                            <option value="<?php echo $orgName; ?>" > <?php echo "$orgName"; ?> </option>
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
+                                <img src="logo/down-chevron.png">
+                            </div>
                           </header>
 
                           <script>
@@ -276,8 +284,8 @@
                      $dsql = pg_query($conn,"select sum(amount) as amount_sum from donation where email='$semail' and mobile_no='$smobile'");                    
                          $row = pg_fetch_assoc($dsql);
                          $sum = $row['amount_sum'];                        
-                         echo $sum."<h4></h4>";
-                    ?>
+                         ?>
+                         <h4><?php echo $sum;?></h4>
                   <h5>Donation</h5>                
                 </div>
               </div>          

@@ -12,9 +12,7 @@ include("database.php");
             {
              $result = $row['org_name'];
              $response = "<span>
-                            <ul>
-                              <li>$result</li>
-                            </ul>
+                            $result                  
                           </span>";
             }
           }

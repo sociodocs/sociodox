@@ -18,8 +18,7 @@
 
         main header {
             height: 50px;
-            padding: 30px 20px 30px 40px;
-            background-color: #622569;
+            padding: 30px 20px 30px 40px;            
         }
 
         main header>* {
