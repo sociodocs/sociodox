@@ -218,9 +218,6 @@
                                   <table>
                                       <tr>
                                           <th>
-                                              <input class="input1" type="text" id="uname" name="uname" placeholder="From">
-                                          </th>
-                                          <th>
                                               <textarea id="msg" name="msg" rows='3' cols='50' placeholder="Type your message">
                     </textarea></th>
                                           <th>
@@ -232,9 +229,7 @@
                           </form>
                       </main>
                   </div>
-
               </body>
-
               </html>
         </div>
         <div id="blog-section">

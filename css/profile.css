@@ -221,7 +221,7 @@ img{
 #lout{
   position: relative;
   left: 90px; 
-  top: 40px;
+  /* top: 40px; */
   bottom: 5px;
   font-size: 20px;
   color: red;
@@ -243,14 +243,20 @@ span{
   display: block;
 }
 .cpwd{
+  display: flex;
+  position: relative;
+  top: 80px;
+  left: 30%;  
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
   width: 350px;
-  height: 200px;
-  margin: 50px 50px 50px 300px;     
+  height: 200px;      
 }
 
-.cp,.np,.dp{
+/* .cp,.np,.dp{
   margin-left: -100px;
-}
+} */
 #oldp,#pass1,#pass2{
   width: 350px;
   height: 30px;
