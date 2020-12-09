@@ -287,10 +287,7 @@
         </div>
         <div id="show-all-section">
           All Organization
-          <div id="j-org">
-                <!doctype html>
-                <html>
-                  <body>
+          <div id="show-joined-org">
                     <?php
                         $username=$_SESSION['username'];
                           $sql = "SELECT org_name FROM organization";                        
@@ -308,9 +305,7 @@
                           }
                         }
                     ?>
-                  </body>
-                </html>
-        </div>
+          </div>
         </div>
         <div id="sorg-section">
             <h3>Selected Organization details:</h3>

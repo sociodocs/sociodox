@@ -169,18 +169,18 @@ img{
   cursor: pointer;
 }
 
-.all-org{       
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
+#show-joined-org{       
+  display: grid;
+  grid-gap: 1em;
+  
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
 #b-people{
   width: 80px;    
  }
  .b-org{  
   font-size: 12px;
-  float: inherit;
   cursor: pointer;
 }
 
