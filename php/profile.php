@@ -67,7 +67,7 @@
                         </table>
                     <?php
                         $count++;
-                          if($count==2)
+                          if($count==6)
                             break;
                           }
                         }
@@ -287,6 +287,30 @@
         </div>
         <div id="show-all-section">
           All Organization
+          <div id="j-org">
+                <!doctype html>
+                <html>
+                  <body>
+                    <?php
+                        $username=$_SESSION['username'];
+                          $sql = "SELECT org_name FROM organization";                        
+                        $result = pg_query($conn,$sql);
+                        $exists = pg_num_rows($result);
+                        $count = 0;
+                        if ($exists > 0){                          
+                        while($row = pg_fetch_assoc($result)) {                          
+                    ?>
+                                <div class="all-org">
+                                  <img id="b-people" src="../logo/people.png"/><br>
+                                  <a class="b-org" id="sorg"> <?php echo $row["org_name"];?></a>                                  
+                                </div>                            
+                    <?php
+                          }
+                        }
+                    ?>
+                  </body>
+                </html>
+        </div>
         </div>
         <div id="sorg-section">
             <h3>Selected Organization details:</h3>

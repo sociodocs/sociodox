@@ -80,8 +80,7 @@ margin-right: 10px;
  
 .box{
   border-radius: 4px;
-  padding: 1px;
-  font-size: 20px; 
+  padding: 1px;  
 } 
 
 hr{
@@ -128,19 +127,6 @@ hr{
   display: none;
 }
 
-
-.jorg{
-  background: #FFFFFF;
-  position: relative;
-  margin-left: 25px;  
-  margin-right: 10px;
-  width: 200px;    
-  display: grid;
-  grid-gap: 0.3em;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-areas: 
-  "people  org  ar";  
-}
 img{
   width: 25px;
   height: auto;
@@ -153,36 +139,51 @@ img{
 #post,#user{
   margin-left: 40px;
 }
-#people{
-  grid-area: people;
+.jorg{
+  background: #FFFFFF;
   position: relative;
-  margin-left: 10px;
-  margin-top: 2px;
+  margin-left: 25px;  
+  margin-right: 10px;
+  width: 200px;    
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+}
+
+#people{
+  float: left;
   width: 20px;
+  margin-left: 10px;
  }
  .org{
-  grid-area: org;
-  position: relative;
-  padding: 3px 3px;
-  font-size: 15px;
-  white-space: nowrap;
-  margin-left: 20px;
-  margin-right: 10px;
-  text-align: start;
+  font-size: 13px;
   cursor: pointer;
 }
 #ar{
-  grid-area: ar;
-  width: 15px;
-  position: relative;
-  margin-right: -20px;
-  margin-top: 5px; 
+  float: right;
+  width: 20px;
 }
 #show-all{
   font-size: 15px;
   color: red;
   cursor: pointer;
 }
+
+.all-org{       
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#b-people{
+  width: 80px;    
+ }
+ .b-org{  
+  font-size: 12px;
+  float: inherit;
+  cursor: pointer;
+}
+
 #editdp{
   position: relative;
   top: -30px;
@@ -295,7 +296,7 @@ span{
 }
 
 .dprofile-dp:hover{
-  transform: scale(1.5);
+  transform: scale(2.5);
 }
 
 .user-name{
