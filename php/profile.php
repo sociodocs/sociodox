@@ -39,8 +39,7 @@
           <h4>Joined Organization</h4><br>
         <div id="j-org">
           <?php include("profile-php/org-list.php");?>
-        </div><br>
-        <a id="show-all">Show all</a>
+        </div><br>        <a id="show-all">Show all</a>
       </div>
       <div class="box sidebar2"><br>
         <a id="settings" href="#"><h3>Settings</h3></a><br>
