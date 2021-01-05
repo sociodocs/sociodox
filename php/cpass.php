@@ -11,22 +11,22 @@
         if(isset($_POST["changepsw"]))
             {
                 $name = $_SESSION['username'];
-                $oldpsw= $_POST["oldpsw"];
+                $old_password = $_POST["oldpsw"];
                 $newpsw= $_POST["newpsw"];
                 $conpsw= $_POST["conpsw"];
                 require("database.php");
                 $qry1 = "SELECT * FROM users where username='$name'";
                 $re = pg_query($conn,$qry1);
                 $row = pg_fetch_array($re);
-                $dbpsw= $row['password'];
+                $db_password = $row['password'];
 
-                if($dbpsw==$oldpsw)
+                if(password_verify($old_password,$db_password))
                     {
 
                         if($newpsw==$conpsw)
                             {
-
-                                $qrys="UPDATE users SET password='$newpsw' WHERE username='$name';";
+                                $hash = password_hash("$newpsw", PASSWORD_DEFAULT);
+                                $qrys="UPDATE users SET password='$hash' WHERE username='$name';";
                                 $results= pg_query($conn,$qrys);
                                 if($results==true)
                                 {
