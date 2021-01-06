@@ -1,10 +1,7 @@
 <?php
               if (isset($_POST['submit'])) {
                   // Escape user inputs for security 
-                  $un = pg_escape_string(
-                      $conn,
-                      $_REQUEST['uname']
-                  );
+                  $un = $_SESSION['username'];
                   $m = pg_escape_string(
                       $conn,
                       $_REQUEST['msg']
@@ -45,6 +42,8 @@
                                 </select>
                                 <img src="logo/down-chevron.png">
                             </div>
+                           <h2> Group Discussion</h2>
+                           
                           </header>
 
                           <script>
@@ -71,7 +70,7 @@
                                   ?>
                                           <div id="triangle1" class="triangle1"></div>
                                           <div id="message1" class="message1">
-                                              <span style="color:white;float:right;">
+                                              <span style="color:black;float:right;">
                                                   <?php echo $row['msg']; ?></span> <br />
                                               <div>
                                                   <span style="color:black;float:left; 
@@ -88,7 +87,7 @@
                                           ?>
                                               <div id="triangle" class="triangle"></div>
                                               <div id="message" class="message">
-                                                  <span style="color:white;float:left;">
+                                                  <span style="color:black;float:left;">
                                                       <?php echo $row['msg']; ?>
                                                   </span> <br />
                                                   <div>
@@ -105,7 +104,7 @@
                                           ?>
                                               <div id="triangle1" class="triangle1"></div>
                                               <div id="message1" class="message1">
-                                                  <span style="color:white;float:right;">
+                                                  <span style="color:black;float:right;">
                                                       <?php echo $row['msg']; ?>
                                                   </span> <br />
                                                   <div>
@@ -123,18 +122,20 @@
                                   endwhile;
                                   ?>
                               </div>
+                              <footer>
                               <div class="send">
                                   <table>
                                       <tr>
                                           <th>
                                               <textarea id="msg" name="msg" rows='3' cols='50' placeholder="Type your message">
-                    </textarea></th>
-                                          <th>
+                                         </textarea></th>
+                                         <th>
                                               <input class="input2" type="submit" id="submit" name="submit" value="send">
                                           </th>
                                       </tr>
                                   </table> 
-                              </div>                             
+                              </div>
+                              </footer>                             
                           </form>
                       </main>
                   </div>

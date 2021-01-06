@@ -53,7 +53,7 @@
         </div>
       <div class="box main">        
         <div id="chat-section">        
-            <?php include("profile-php/chat.php");?>
+            <?php include("./profile-php/chat.php");?>
         </div>
         <div id="blog-section">
           This is blog
