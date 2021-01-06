@@ -1,163 +1,115 @@
-        #container {
-            width: 100%;
-            height: 600px;
-            background: white;
-            margin: 0 auto;
-            font-size: 0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
+ #container{
+     color:black;
+    background: white;
+ }
 
-        main {
-            width: 100%;
-            height: 600px;
-            display: inline-block;
-            font-size: 15px;
-            vertical-align: top;
-        }
+main{
+    font-size: 15px;
+    vertical-align: top;
+    background-color: white;
+}
 
-        main header {
-            height: 50px;
-            padding: 30px 20px 30px 40px;            
-        }
+main header {
+    height: 50px;
+    padding: 10px 10px 10px 10px;
+    background-color: #32a515;
+}
+    
+main header h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 5px;
+    color: black;
+}
 
-        main header>* {
-            display: inline-block;
-            vertical-align: top;
-        }
+ main .inner_div {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+    overflow: auto;
+    height: 500px;
+    background-color: white;
+    background-position: center;
+     background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-top: 2px solid #fff;
+}
 
-        main header img:first-child {
-            width: 24px;
-            margin-top: 8px;
-        }
+main .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #95e981 transparent;
+    margin-right: 20px;
+    float: right;
+    clear: both;
+}
 
-        main header img:last-child {
-            width: 24px;
-            margin-top: 8px;
-        }
+main .message {
+    padding: 10px;
+    color: #000;
+    margin-right: 15px;
+    background-color: #95e981;
+    line-height: 20px;
+    max-width: 90%;
+    display: inline-block;
+    text-align: right;
+    border-radius: 5px;
+    float: right;
+    clear: both;
+}
 
-        main header div {
-            margin-left: 90px;
-            margin-right: 90px;
-        }
+main .triangle1 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #9b62f5 transparent;
+    margin-left: 20px;
+    float: left;
+    clear: both;
+}
+main .message1 {
+    padding: 10px;
+    color: #000;
+    margin-left: 15px;
+    background-color: #9b62f5;
+    line-height: 20px;
+    max-width: 90%;
+    display: inline-block;
+    text-align: left;
+    border-radius: 5px;
+    float: left;
+    clear: both;
+}
 
-        main header h2 {
-            font-size: 25px;
-            margin-top: 5px;
-            text-align: center;
-            color: #FFFFFF;
-        }
+main .send{
+    background-color: white;
+    width: 100%;
 
-        main .inner_div {
-            padding-left: 0;
-            margin: 0;
-            list-style-type: none;
-            position: relative;
-            overflow: auto;
-            height: 300px;            
-            position: relative;
-            border-top: 2px solid #fff;
-            border-bottom: 2px solid #fff;
+}
 
-        }
+main footer textarea{
+    width: 100ch;
+    padding:0%;
+    border-radius: 50px;
+    outline: none;
+    color:black;
+}
 
-        main .triangle {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 8px 8px 8px;
-            border-color: transparent transparent #58b666 transparent;
-            margin-left: 20px;
-            clear: both;
-        }
-
-        main .message {
-            padding: 10px;
-            color: #000;
-            margin-left: 15px;
-            background-color: #58b666;
-            line-height: 20px;
-            max-width: 90%;
-            display: inline-block;
-            text-align: left;
-            border-radius: 5px;
-            clear: both;
-        }
-
-        main .triangle1 {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 8px 8px 8px;
-            border-color: transparent transparent #6fbced transparent;
-            margin-right: 20px;
-            float: right;
-            clear: both;
-        }
-
-        main .message1 {
-            padding: 10px;
-            color: #000;
-            margin-right: 15px;
-            background-color: #6fbced;
-            line-height: 20px;
-            max-width: 90%;
-            display: inline-block;
-            text-align: left;
-            border-radius: 5px;
-
-            clear: both;
-        }
-
-         main {
-            height: 150px;
-            padding: 20px 30px 10px 20px;
-            background-color: #622569;
-        }
-
-        main .input1 {
-            resize: none;
-            border: 100%;
-            display: block;
-            width: 100%;
-            height: 55px;
-            border-radius: 3px;
-            padding: 20px;
-            font-size: 13px;
-            margin-bottom: 13px;
-        }
-
-        main textarea {
-            resize: none;
-            border: 100%;
-            display: block;
-            width: 100%;
-            height: 55px;
-            border-radius: 3px;
-            padding: 20px;
-            font-size: 13px;
-            margin-bottom: 13px;
-            margin-left: 20px;
-        } */
-
-        .send .input2 {
-            resize: none;
-            border: 100%;
-            display: block;
-            width: 40%;
-            height: 55px;
-            border-radius: 3px;
-            padding: 20px;
-            font-size: 13px;
-            margin-bottom: 13px;
-            margin-left: 100px;
-            color: white;
-            text-align: center;
-            background-color: black;
-            border: 2px solid white;
-        }
-
-
-        .send textarea::placeholder {
-            color: #ddd;
-        } 
+main footer .input2 {
+    border: 100%;
+    border-radius: 50px;
+    padding: 13px;
+    text-align: center;
+    border: 2px solid ;
+    margin-bottom: 10px;
+    outline: none;
+}
+#msg {
+    color: black;
+}
+    
