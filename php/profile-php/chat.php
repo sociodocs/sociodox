@@ -26,8 +26,8 @@
                   <div id="container">
                       <main>
                           <header>
-                            <div class="#">
-                                <label>Select Organization</label>
+                            <div class="#" align="center">
+                                <label>Select Organization:</label>
                                 <select name="org_name" id="org_name">
                                     <?php
                                         $result = pg_query($conn,"Select * from organization");
@@ -40,7 +40,7 @@
                                         }
                                     ?>
                                 </select>
-                                <img src="logo/down-chevron.png">
+                                <!--<img src="logo/down-chevron.png">-->
                             </div>
                            <h2> Group Discussion</h2>
                            
