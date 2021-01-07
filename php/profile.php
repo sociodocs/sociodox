@@ -3,7 +3,7 @@
     session_start();
     if(isset($_SESSION['email'])) {
     } else {
-      header('location:../index.html');
+      header('location:../index.html'); 
     }
 ?>
 <!DOCTYPE html>
@@ -54,10 +54,7 @@
       <div class="box main">        
         <div id="chat-section">        
             <?php include("./profile-php/chat.php");?>
-        </div>
-        <div id="blog-section">
-          This is blog
-        </div>
+        </div>        
         <div id="profile-section">           
           <div class="dprofile-card">
               <div class="dprofile">
@@ -179,6 +176,10 @@
                 </div>
             </div> 
           </form>
+        </div>
+        <div id="blog-section">
+          This is blog
+          <?php include("./profile-php/blog.php");?>
         </div>
       </div>
       <div class="box footer">copyright sociodox.org</div>

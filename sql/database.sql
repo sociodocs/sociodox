@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS BlogComment;
+DROP TABLE IF EXISTS finalchat;
 DROP TABLE IF EXISTS users_organization;
 DROP TABLE IF EXISTS profile;
 DROP TABLE IF EXISTS admin;
@@ -34,6 +36,11 @@ create table organization(
     org_name varchar(20) NOT NULL,
     org_type varchar(50) NOT NULL,
     org_category varchar(50) NOT NULL,
+    email varchar(100) not null,
+    mobile_no bigint not null,
+    org_address varchar(100) NOT NULL,
+    org_password varchar(255) not null,
+    org_date timestamp NOT NULL,
     org_total_don int NOT NULL
 );
 
@@ -85,4 +92,14 @@ CREATE TABLE finalchat(
   uname varchar(20) NOT NULL,
   msg text NOT NULL,
   dt timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+create table BlogComment(
+    sr_no serial primary key,
+    post text NOT NULL,
+    post_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    title varchar(300),
+    filename varchar(100),
+    imgtext varchar(100),
+    author varchar(100)
 );
