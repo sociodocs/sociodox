@@ -41,8 +41,8 @@
 
 .blogimg {
     vertical-align: middle;
-    width: 30%;
-    margin-left:auto;
+    width: 65%;
+    /*margin-left:auto;*/
     color: black;
 }
 .blogimg-responsive{

@@ -15,7 +15,9 @@
       <link rel="stylesheet" href="../css/profile.css">
       <link rel="stylesheet" href="../main.css">
   </head>
-  <body>
+  <body onload="myFunction()">
+    <div id="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
     <div class="profile">
       <div class="box header1">
         <div class="plogo">SOCIODOX</div>
@@ -114,9 +116,7 @@
         <div id="sorg-section">
             <h3>Selected Organization details:</h3>
         </div>
-        <div id="settings-section">
-          Settings
-        </div>
+        <div id="settings-section">Settings</div>
         <div id="edit-section">          
           <div class="dprofile-card">
               <div class="dprofile">
@@ -177,8 +177,7 @@
             </div> 
           </form>
         </div>
-        <div id="blog-section">
-          This is blog
+        <div id="blog-section">          
           <?php include("./profile-php/blog.php");?>
         </div>
       </div>
@@ -186,5 +185,6 @@
     </div>  
     <script src="../js/search.js"></script> 
     <script src="../main.js"></script> 
+    </div>
   </body>
 </html>
