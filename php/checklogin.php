@@ -9,24 +9,30 @@
 	if(filter_var($email_phone,FILTER_VALIDATE_EMAIL)){
 		$sql = "SELECT * from users WHERE email='$email_phone'"; 
 	}
-	else{
+	else if (filter_var($email_phone, FILTER_VALIDATE_INT)){
 		$sql = "SELECT * from users WHERE mobile_no='$email_phone'"; 
 	}
+	else{ 
+		$sql = "SELECT * from users WHERE username='$email_phone'"; 
+	}
+	
 	$query = pg_query($conn, $sql);
 	$exists = pg_num_rows($query); 	
 	$table_users = "";
-	$table_users1 ="";
+	$table_mobile_no ="";
 	$table_password = "";	
 	if($exists > 0) 
 	{
 		while($row = pg_fetch_assoc($query)) 
 		{
 			$table_users = $row['email']; 
-			$table_users1 =$row['mobile_no'];
+			$table_mobile_no =$row['mobile_no'];
 			$table_username =$row['username'];
 			$table_password = $row['password'];
 		}
-		if(($email_phone == $table_users) &&  password_verify($password,$table_password)||($email_phone == $table_users1) &&  password_verify($password,$table_password))
+		if(($email_phone == $table_users) &&  password_verify($password,$table_password)
+			||($email_phone == $table_mobile_no) &&  password_verify($password,$table_password)
+			||($email_phone == $table_username) &&  password_verify($password,$table_password))
 		{				
 				
 				if(password_verify($password,$table_password))
