@@ -2,6 +2,7 @@ body{
   margin: 2px;
   font-family: 'Poppins';
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .separator{
@@ -126,6 +127,9 @@ hr{
 
 #chat-section,#blog-section,#profile-section,#show-all-section,#sorg-section,#settings-section,#edit-section,#cpass-section{
   display: none;
+  height: 75vh;
+  overflow-y: auto;
+
 }
 
 img{
