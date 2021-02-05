@@ -12,7 +12,7 @@ main{
 main header {
     height: 50px;
     padding: 10px 10px 10px 10px;
-    background-color: #32a515;
+    background-color: #E5E5E5B0;
 }
     
 main header h2 {
@@ -28,7 +28,7 @@ main header h2 {
     list-style-type: none;
     position: relative;
     overflow: auto;
-    height: 400px;
+    height: 350px;
     background-color: white;
     background-position: center;
      background-repeat: no-repeat;
