@@ -44,8 +44,7 @@ while ($row = pg_fetch_assoc($result)) {
 ?>
             </select>
             <!--<img src="logo/down-chevron.png">-->
-          </div>
-          <h2>Group Discussion</h2>
+          </div>          
         </header>
 
         <script>

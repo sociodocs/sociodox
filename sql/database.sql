@@ -41,7 +41,7 @@ create table organization(
     org_address varchar(100) NOT NULL,
     org_password varchar(255) not null,
     org_date timestamp NOT NULL,
-    org_total_don int NOT NULL
+    org_total_don bigint
 );
 
 create table donation(
