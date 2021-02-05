@@ -206,7 +206,11 @@ img{
   font-weight: 400;
   color: #000;
 }
-
+#p{
+  opacity: 0;
+  position: absolute;
+  z-index: -1
+}
 #inside{
   position: absolute;
 }

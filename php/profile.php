@@ -121,7 +121,7 @@
           <div class="dprofile-card">
               <div class="dprofile">
                 <img src="<?php echo $_SESSION['dp'];?>" class="dprofile-dp">
-                <img id="editdp" src="../logo/edit-DP.png"/>
+                <label for="p"><img id="editdp" src="../logo/edit-DP.png"/></label>
               </div>
           </div>         
           <div class="edit-p">
