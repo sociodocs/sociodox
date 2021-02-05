@@ -122,9 +122,10 @@
               <div class="dprofile">
                 <img src="<?php echo $_SESSION['dp'];?>" class="dprofile-dp">
                 <label for="p"><img id="editdp" src="../logo/edit-DP.png"/></label>
-              </div>
+              </div>              
           </div>         
           <div class="edit-p">
+            <h3 class="user-name" align="center"> <?php echo $_SESSION['username'];?> </h3>
             <form method="POST" action="editprofile.php" enctype="multipart/form-data">
               <div id="ep"><input type="file" name="p" id="p" default="$_SESSION['dp']"/></div>
                 <div id="row1">
