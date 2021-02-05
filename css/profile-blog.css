@@ -11,6 +11,9 @@
 
 .panel-body {
     padding: 15px;
+    display: grid;
+    grid-template-columns: auto auto;
+    
    
 }
 .panel-default {
@@ -28,30 +31,31 @@
 }
 .col-md-3{
 	position: relative;
-	min-height: 1px;
-	padding-right: 15px;
-    padding-left: 15px;
-    margin-right:75px;
+	min-height: 30px;
+	padding-right: 0px;
+    padding-left: 0px;
+    margin-right:0px;
     text-align: right;
 }
 .pull-right {
-	right:0;
+	right:10px;
     left: auto;
+    width: 0%;
 }
 
 .blogimg {
     vertical-align: middle;
-    width: 65%;
+    width: 350px;
     /*margin-left:auto;*/
     color: black;
 }
 .blogimg-responsive{
 	display: block;
 	max-width: 100%;
-    height: auto;
+    height:200px;
 }
 .blogimg-rounded {
-	border-radius: 6px;
+	border-radius: 5px;
 }
 
 .panel-default>.panel-heading {
