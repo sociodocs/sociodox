@@ -368,4 +368,96 @@ span{
   width: 100%;
   height: 35px;
 }
- 
+.menu{
+  display: none;
+}
+.pnav{
+  display: none;
+}
+
+@media screen and (max-width: 900px){
+  .sidebar1,.separator,.sidebar2,.header3{
+    display: none;
+  }
+  
+  .pnav{
+    display: block;
+    grid-area: nav;
+  }
+  .menu{
+    display: block;
+    background-color: #E5E5E5B0;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+  }
+  .header1{
+    grid-area: header1;
+    background-color: #FFFFFF;
+    position: absolute; 
+    max-width: 100%;
+  }
+  .header2{
+    grid-area: header2;
+    position: relative;
+    margin-top: -20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    background-color: #FFFFFF;
+  }
+  .plogo{
+    position: relative;
+    height: 33px;
+    left: 100%;
+    top: 10px;  
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    color: #000000;  
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .people{
+    position: relative;
+    font-size: 10px;
+    width: 100%;
+    left: 200%;
+    top: 5px;       
+  }
+  body{
+    margin: 2px;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+    overflow: auto;
+  }
+  .profile{
+    width: 100%;
+    height: 100vh;
+    background: #FFFFFF;
+    font-family: 'Poppins';
+    display: grid;
+    grid-gap: 0.3em;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 8% 4% auto 8%;
+    grid-template-areas:
+      "header1"
+      "nav"
+      "header2"
+      "main"
+      "footer";  
+  }
+  /* #edit,#cpass,#lout,#show-all{
+    margin-left: 5px;
+    font-size: unset;
+    cursor: pointer;
+    color: unset;
+    top: unset;
+    left: unset;
+    bottom: unset;
+    position: relative;
+  } */
+  
+}

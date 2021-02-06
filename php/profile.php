@@ -20,10 +20,24 @@
     <div style="display:none;" id="myDiv" class="animate-bottom">
     <div class="profile">
       <div class="box header1">
+        <label for="menu" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+        </label>
         <div class="plogo">SOCIODOX</div>
         <div class="people">For people</div>
       </div>
-      <div class="box header2">
+      <nav class="pnav">              
+          <!--<a id="chat" href="#"><img id="chat" src="../logo/chat.png"/></a>
+          <a id="blog" href="#"><img id="post" src="../logo/post.png"/></a>
+          <a id="profile" href="#"><img id="user" src="../logo/user.png"/></a> 
+          <a id="show-all"><img id="post" src="../logo/people.png"/></a> 
+          <a id="edit" href="#"><img id="post" src="../logo/edit.png"/></a> 
+          <a id="cpass" href="#"><img id="post" src="../logo/padlock.png"/></a>
+          <a id="lout" href="logout.php"><img id="post" src="../logo/logout.png"/></a> -->
+      </nav>
+      <div class="box header2">        
         <form action="#" method="POST"> 
           <div align=center class="search">
                 <div id="sbar"><input type="search" name="search" id="search"  placeholder="Search For Organization" autocomplete="off" onkeyup="Search()"/></div>               
@@ -183,7 +197,18 @@
         </div>
       </div>
       <div class="box footer">copyright sociodox.org</div>
-    </div>  
+    </div>    
+    <!--<div class="menu">
+      <div><a href="#">Profile</a></div>
+      <div><a href="#">Profile</a></div>
+      <div><a href="#">Profile</a></div>
+      <br><br><br>
+      <div><a href="#">Profile</a></div>
+      <div><a href="#">Profile</a></div>
+      <br><br><br>
+      <div><a href="#">Profile</a></div>
+      <div><a href="#">Profile</a></div>
+    </div>-->  
     <script src="../js/search.js"></script> 
     <script src="../main.js"></script> 
     </div>
