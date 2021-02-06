@@ -27,11 +27,11 @@
             <label class="lab">Select Image File to upload in blog:</label>
             <input type="file" name="image" class="bar"><br>
             <label class="lab">Type text to show below the image:</label>
-            <textarea name="text" cols="20" rows="2" class="bar"></textarea><br>
+            <input name="text" cols="20" rows="2" class="bar"/><br>
             <label class="lab">Title of post:</label>
             <input type="text" name="title" class="bar" /><br>
             <label class="lab">Description of post:</label>
-            <input type="text" id="text" name="desc" class="bar" /><br>
+            <textarea rows='2' id="text" name="desc" class="bar" /></textarea><br>
             <label class="lab">author of post:</label>
             <input type="text" id="author" name="author" class="bar" /><br>
             <input type="submit" value="post" id="post" name="post" class="btn"/>

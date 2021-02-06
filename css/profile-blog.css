@@ -38,20 +38,23 @@
     text-align: right;
 }
 .pull-right {
-	right:10px;
+	right:180px;
     left: auto;
     width: 0%;
 }
-
+.content{
+    margin-right: 200px;
+}
 .blogimg {
     vertical-align: middle;
-    width: 350px;
+    width: 450px;
     /*margin-left:auto;*/
     color: black;
+    height: 200px;
 }
 .blogimg-responsive{
 	display: block;
-	max-width: 100%;
+	max-width: 280%;
     height:200px;
 }
 .blogimg-rounded {

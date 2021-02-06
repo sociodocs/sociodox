@@ -126,11 +126,11 @@
 }
 
 img {
-    vertical-align: left;
-    width: 50%;
-    margin-left:auto;
+    vertical-align: middle;
+    width: 35%;
+    margin-left:0px;
     color: black;
-    height: 50%;
+    height: 55%;
 }
 .img-responsive{
 	display: block;
