@@ -62,6 +62,7 @@ margin-right: 10px;
   position: relative;
   margin-top: 20px;
   margin-left: 30px;
+  display: inline-flex;
 }
 
 .profile{
@@ -133,16 +134,24 @@ hr{
 }
 
 img{
-  width: 25px;
-  height: auto;
+  
+    vertical-align: middle;
+    width: 30%;
+    margin-left:0px;
+    color: black;
+    height: 55%;
+    margin-top: 4px;
+
 }
 
 #chat{
-  margin-left: 10px;
+  margin-left: 0px;
 }
-
-#post,#user{
-  margin-left: 40px;
+#post{
+  margin-left: 2px;
+}
+#user{
+  margin-left: 2px;
 }
 .jorg{
   background: #FFFFFF;

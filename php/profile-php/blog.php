@@ -28,8 +28,8 @@ while ($row = pg_fetch_array($comm)) {
             <h5><span class="glyphicon glyphicon-time"></span> Posted On:<?php echo $row['post_time'];?></h5>
           </div>
           <div class="panel-body">
-            <?php echo $row['post']; ?>
-            <div class="col-md-3 pull-right">
+            <p class="content"><?php echo $row['post']; ?></p>
+            <div class="col-md-3 pull-right" style="width: 100px;height:auto;">
               <!--<img class='img-responsive img-rounded center blogimg' src="blogimage/<?php echo $row['img']; ?>">-->
               <?php
               if ($extension = '.jpg' | $extension = '.png' | $extension = '.jpeg') {

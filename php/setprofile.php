@@ -47,7 +47,7 @@
         
         }
         
-        $sql1 = "INSERT INTO profile VALUES (default,'$first_name','$last_name','$email','$mobile','$profileimage','$username')";
+        $sql1 = "INSERT INTO profile VALUES(default,'$first_name','$last_name','$email','$mobile','$profileimage','$username')";
         $result = pg_query($conn,$sql1) or die("could");
             if($result){
                 Print '<script>alert("You have successfully setup the profile.");</script>'; 
