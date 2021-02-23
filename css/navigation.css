@@ -81,6 +81,7 @@ nav ul li a:hover {
 .dropdown {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .dropdown-content {
