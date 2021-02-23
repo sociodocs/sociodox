@@ -140,6 +140,7 @@ var myVar;
 
 function myFunction() {
   myVar = setTimeout(showPage, 1000);
+  document.getElementById('profile').click();
 }
 
 function showPage() {

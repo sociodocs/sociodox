@@ -203,6 +203,7 @@ img{
   top: -30px;
   left: 30px;
   cursor: pointer;
+  width: 30px;
 }
 .edit-p{
   position: relative;
