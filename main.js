@@ -140,7 +140,7 @@ var myVar;
 
 function myFunction() {
   myVar = setTimeout(showPage, 1000);
-  document.getElementById('profile').click();
+  document.getElementById('profile').click();//for default profile-section
 }
 
 function showPage() {

@@ -186,7 +186,8 @@ img{
 #show-joined-org{       
   display: grid;
   grid-gap: 1em;
-  
+  margin-left: 50px;
+  margin-right: 50px;  
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 

@@ -19,20 +19,20 @@
 
 <body>
     <?php
-    session_start();
+    //session_start();
     include("adminheader1.php"); ?>
     <div class="admin" align="center">
         <h2>Post on blog</h2> 
         <form action="" method="post" enctype="multipart/form-data" class="frm">
-            <label class="lab">Select Image File to upload in blog:</label>
+            <label class="lab">Select Image File to upload in blog:</label><br>
             <input type="file" name="image" class="bar"><br>
-            <label class="lab">Type text to show below the image:</label>
+            <label class="lab">Type text to show below the image:</label><br>
             <input name="text" cols="20" rows="2" class="bar"/><br>
-            <label class="lab">Title of post:</label>
+            <label class="lab">Title of post:</label><br>
             <input type="text" name="title" class="bar" /><br>
-            <label class="lab">Description of post:</label>
+            <label class="lab">Description of post:</label><br>
             <textarea rows='2' id="text" name="desc" class="bar" /></textarea><br>
-            <label class="lab">author of post:</label>
+            <label class="lab">author of post:</label><br>
             <input type="text" id="author" name="author" class="bar" /><br>
             <input type="submit" value="post" id="post" name="post" class="btn"/>
         </form>

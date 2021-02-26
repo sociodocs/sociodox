@@ -20,7 +20,7 @@
 						<th>Username</th>
 						<th>Email</th>
                         <th>Mobile No</th>
-						<th>Password</th>
+						<!-- <th>Password</th> -->
 						<th>Update</th>
 					</tr>
 				<?php
@@ -30,7 +30,7 @@
 						<td><?php echo $row["username"]; ?></td>
 						<td><?php echo $row["email"]; ?></td>
 						<td><?php echo $row["mobile_no"]; ?></td>
-						<td><?php echo $row["password"];?></td>
+						<!-- <td><?php //echo $row["password"];?></td> -->
 						<td>
 							<div><a href="edit-user.php?user=<?php echo $row["username"];?>" class="btn">Edit</a></div>
 							<div><a href="delete-user.php?user=<?php echo $row["username"];?>" class="btn">Delete</a></div>
